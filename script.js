@@ -883,6 +883,7 @@ function initProductItems() {
       showNotification('Ваш дизайн сохранен!', 'success');
     });
   }
+}
   
   // Initialize 3D Model Viewer
   function init3DViewer(container, product, isCustomizable) {
@@ -980,7 +981,6 @@ function initProductItems() {
     
     return texture;
   }
-}
 
 // User Design Storage and Display
 function saveUserDesign(designProduct) {
