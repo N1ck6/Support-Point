@@ -1,50 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gentle Threads - Comfortable Clothing for HIA</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-<script defer src="/static/js/bundle.js"></script></head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support Point</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="data/favicon.ico" />
+</head>
+
 <body>
   <!-- Header Section -->
   <header>
     <div class="container">
       <div class="logo">
-        <h1>Gentle Threads</h1>
-        <p>Comfortable and stylish clothing for HIA</p>
+        <h1>Точка Опоры</h1>
+        <p>Удобная и стильная одежда для ОВЗ</p>
       </div>
       <nav>
         <ul>
-          <li><a href="#main" class="nav-link">Home</a></li>
-          <li><a href="#about" class="nav-link">About</a></li>
-          <li><a href="#items" class="nav-link">Shop</a></li>
-          <li><a href="#footer" class="nav-link">Contact</a></li>
+          <li><a href="#main" class="nav-link">Главная</a></li>
+          <li><a href="#about" class="nav-link">О нас</a></li>
+          <li><a href="#items" class="nav-link">Магазин</a></li>
+          <li><a href="#footer" class="nav-link">Контакты</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
   <!-- Main Section with Carousel -->
-  <section id="main" class="main-section">
+  <section id="main" class="main-section slide-up animated">
     <div class="container">
       <div class="main-content">
         <div class="intro-text">
-          <h2>Clothing That <span class="highlight">Understands</span> Your Needs</h2>
-          <p>Our specially designed collection provides both comfort and style for people with Histamine Intolerance (HIA). Experience the difference with fabrics that care for your skin.</p>
-          <a href="#items" class="btn primary-btn">Shop Now</a>
+          <h2>
+            Одежда, которая
+            <span class="highlight">понимает</span>
+            Ваши потребности
+          </h2>
+          <p>
+            Наша специально разработанная коллекция одежды
+            обеспечивает комфорт и стиль для людей с
+            ограниченными возможностями здоровья. Почувствуйте
+            разницу благодаря одежде, которая подобрана
+            специально для вас.
+          </p>
+          <a href="#items" class="btn primary-btn">ПЕРЕЙТИ К ТОВАРАМ</a>
         </div>
-        
+
         <div class="carousel-container">
-          <h3>Our Happy Customers</h3>
+          <h3>Наши Счастливые Клиенты</h3>
           <div class="carousel">
-            <div class="carousel-inner">
+            <div class="carousel-inner" style="transform: translateX(-400%)">
             </div>
-            <button class="carousel-btn prev" aria-label="Previous slide">&lt;</button>
-            <button class="carousel-btn next" aria-label="Next slide">&gt;</button>
+            <button class="carousel-btn prev" aria-label="Предыдущий слайд">
+              &lt;
+            </button>
+            <button class="carousel-btn next" aria-label="Следующий слайд">
+              &gt;
+            </button>
           </div>
         </div>
       </div>
@@ -52,21 +66,33 @@
   </section>
 
   <!-- About Section -->
-  <section id="about" class="about-section">
+  <section id="about" class="about-section slide-up animated">
     <div class="container">
-      <h2>Our Mission</h2>
+      <h2>Коротко о нас</h2>
       <div class="about-content">
         <div class="mission-text">
-          <p>At Gentle Threads, our mission is to provide people with Histamine Intolerance (HIA) clothing they are not only comfortable in, but also truly love to wear. We believe that living with sensitivity shouldn't mean compromising on style.</p>
-          <p>Every piece in our collection is carefully crafted with hypoallergenic materials and dyes to ensure your skin stays happy while you look fabulous.</p>
+          <p>
+            Точка опоры — онлайн-платформа для продажи
+            адаптивной стильной одежды, разработанной для людей
+            с ограниченными возможностями здоровья (ОВЗ).
+          </p>
+          <p>
+            Мы объединяем модный дизайн с функциональными
+            решениями: магнитные застежки, бесшовные ткани,
+            индивидуальный пошив через 3D-конфигуратор.
+          </p>
+          <p>
+            Наша цель — сделать инклюзивную моду доступной,
+            комфортной и эстетичной для всех.
+          </p>
         </div>
         <div class="mission-image">
-          <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d" alt="Our clothing collection" class="fade-in">
+          <img src="data/we.jpg" class="fade-in" />
         </div>
       </div>
-      
+
       <div class="testimonials">
-        <h3>What Our Customers Say</h3>
+        <h3>Отзывы наших клиентов</h3>
         <div class="testimonial-carousel">
           <div class="testimonial-container">
           </div>
@@ -78,19 +104,18 @@
   </section>
 
   <!-- Items Section -->
-  <section id="items" class="items-section">
+  <section id="items" class="items-section slide-up animated">
     <div class="container">
-      <h2>Our Collection</h2>
+      <h2>Коллекция текущего сезона</h2>
       <div class="items-grid">
       </div>
     </div>
-    
+
     <!-- Modal for item details -->
     <div id="item-modal" class="modal">
       <div class="modal-content">
-        <span class="close-modal">&times;</span>
-        <div class="modal-body">
-        </div>
+        <span class="close-modal">×</span>
+        <div class="modal-body"></div>
       </div>
     </div>
   </section>
@@ -99,42 +124,47 @@
     <div class="container">
       <div class="footer-content">
         <div class="footer-section about-footer">
-          <h3>Gentle Threads</h3>
-          <p>Comfort meets style for sensitive skin.</p>
+          <h3>Точка Опоры</h3>
+          <p>
+            Комфорт в сочетании со стилем для чувствительной кожи.
+          </p>
           <div class="contact-info">
-            <p><strong>Email:</strong> hello@gentlethreads.com</p>
-            <p><strong>Phone:</strong> (555) 123-4567</p>
-            <p><strong>Address:</strong> 123 Comfort Lane, Fabric City</p>
+            <p><strong>Электронная почта:</strong>informational@SupportPoint.ru</p>
+            <p><strong>Телефон:</strong> (800) 555-3535</p>
+            <p><strong>Адрес:</strong> 1-й Опорный проезд, д. 5А</p>
           </div>
         </div>
-        
+
         <div class="footer-section links">
-          <h3>Quick Links</h3>
+          <h3>Быстрый переход</h3>
           <ul>
-            <li><a href="#main">Home</a></li>
-            <li><a href="#about">About Us</a></li>
-            <li><a href="#items">Shop</a></li>
-            <li><a href="#">Return Policy</a></li>
-            <li><a href="#">FAQs</a></li>
+            <li><a href="#main">Главная</a></li>
+            <li><a href="#about">О нас</a></li>
+            <li><a href="#items">Магазин</a></li>
+            <li><a href="#">Правила возврата</a></li>
+            <li><a href="#">Вопросы и ответы</a></li>
           </ul>
         </div>
-        
+
         <div class="footer-section newsletter">
-          <h3>Stay Updated</h3>
-          <p>Subscribe to our newsletter for new arrivals and helpful tips.</p>
+          <h3>Оставайтесь В Курсе событий</h3>
+          <p>
+            Подпишитесь на нашу рассылку новостей, чтобы
+            получать новые поступления и полезные советы.
+          </p>
           <form>
-            <input type="email" placeholder="Your email address" required>
-            <button type="submit" class="btn">Subscribe</button>
+            <input type="email" placeholder="Ваш адрес электронной почты" required="" />
+            <button type="submit" class="btn">Подписаться</button>
           </form>
         </div>
       </div>
-      
+
       <div class="footer-bottom">
-        <p>&copy; 2025 Gentle Threads. All Rights Reserved.</p>
+        <p>© 2025 Точка Опоры. Все права защищены.</p>
       </div>
     </div>
   </footer>
-
   <script src="script.js"></script>
 </body>
+
 </html>

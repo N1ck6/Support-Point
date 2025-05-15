@@ -32,7 +32,6 @@ function initCustomerCarousel() {
     
     const img = document.createElement('img');
     img.src = imgSrc;
-    img.alt = `Happy customer ${index + 1}`;
     
     item.appendChild(img);
     carouselInner.appendChild(item);
@@ -63,28 +62,123 @@ function initCustomerCarousel() {
 function initTestimonials() {
   const testimonials = [
     {
-      content: "Since discovering Gentle Threads, I finally feel comfortable and confident in my clothing. No more itchy skin or reactions!",
-      author: "Sarah M.",
+      content: "С тех пор, как я открыла для себя Точку Опоры, я наконец-то чувствую себя комфортно и уверенно в своей одежде. Больше никакой зудящей кожи или аллергических реакций!",
+      author: "Алиса С.",
       rating: 5
     },
     {
-      content: "These are the only shirts I can wear without discomfort. The quality is amazing and they look so stylish too!",
-      author: "Michael T.",
+      content: "Это единственные рубашки, которые я могу носить без дискомфорта. Качество потрясающее, и они выглядят очень стильно!",
+      author: "Михаил Т.",
       rating: 5
     },
     {
-      content: "As someone with severe HIA, finding Gentle Threads has been life-changing. I can finally focus on my day instead of my discomfort.",
-      author: "Jennifer L.",
+      content: "Для меня, человека с тяжёлой формой синдрома Гийена-Барре, знакомство с Точкой Опоры изменило жизнь. Я наконец-то могу сосредоточиться на своём сне, а не на дискомфорте.",
+      author: "Марина Л.",
       rating: 5
     },
     {
-      content: "The fabrics are incredibly soft and breathable. I've recommended these to everyone in my HIA support group!",
-      author: "David K.",
+      content: "Ткань невероятно мягкая и дышащая. Я уже порекомендовала этот сайт всем моим друзьям в нашей группе для поддержки людей с ОВЗ!",
+      author: "Антон Б.",
       rating: 5
     },
     {
-      content: "Not only are these clothes perfect for my sensitive skin, but they're also stylish enough for work meetings. Thank you!",
-      author: "Emma R.",
+      content: "Эта одежда не только идеально подходит для моей чувствительной кожи, но и достаточно стильная для рабочих встреч. Спасибо!",
+      author: "Настя Ю.",
+      rating: 5
+    },
+    {
+      content: "Заказываю уже третий раз и каждый раз восхищаюсь качеством! Одежда не вызывает раздражения даже после целого дня ношения.",
+      author: "Дмитрий К.",
+      rating: 5
+    },
+    {
+      content: "Как мама ребенка с аутизмом, я очень требовательна к тканям. Ваши вещи - единственные, которые он соглашается носить без капризов!",
+      author: "Елена В.",
+      rating: 5
+    },
+    {
+      content: "Наконец-то нашла одежду, которая не выглядит медицинской, но при этом учитывает все мои потребности. Это просто чудо!",
+      author: "Ольга П.",
+      rating: 5
+    },
+    {
+      content: "После инсульта сложно подобрать удобную одежду. Ваши вещи с магнитными застежками - настоящее спасение!",
+      author: "Сергей М.",
+      rating: 5
+    },
+    {
+      content: "Заказывала платье для свадьбы - выглядело потрясающе и было невероятно удобным! Никаких компромиссов между красотой и комфортом.",
+      author: "Ангелина Р.",
+      rating: 5
+    },
+    {
+      content: "Как стилист с 10-летним стажем, я рекомендую Точку Опоры всем клиентам с особенными потребностями. Качество на уровне люксовых брендов!",
+      author: "Артем Ж.",
+      rating: 5
+    },
+    {
+      content: "Ваш 3D-конфигуратор - гениальное решение! Впервые смогла создать идеально подходящую мне вещь без примерок.",
+      author: "Виктория Ч.",
+      rating: 5
+    },
+    {
+      content: "После операции долго не мог найти подходящую одежду. Ваши вещи помогли вернуть уверенность в себе!",
+      author: "Игорь С.",
+      rating: 5
+    },
+    {
+      content: "Купила бабушке с артритом блузку - теперь она может одеваться самостоятельно. Слезы радости бесценны!",
+      author: "Арина Д.",
+      rating: 5
+    },
+    {
+      content: "Работаю врачом и ценю гигиеничность ваших тканей. Теперь рекомендую пациентам с дерматитами!",
+      author: "Глеб Н.",
+      rating: 5
+    },
+    {
+      content: "Ваш сервис достоин отдельной благодарности! Помогли подобрать размер и оформили срочную доставку перед важным мероприятием.",
+      author: "Элина Т.",
+      rating: 5
+    },
+    {
+      content: "Как спортсмен с протезом, оценил специальные модели - не натирают и отводят влагу лучше специализированных брендов!",
+      author: "Роман З.",
+      rating: 5
+    },
+    {
+      content: "Для моего ребенка с ДЦП нашли идеальные брюки - мягкие, с регулируемой талией. Теперь заказываем только у вас!",
+      author: "Светлана У.",
+      rating: 5
+    },
+    {
+      content: "После мастэктомии сложно подобрать красивое бельё. Ваши варианты вернули мне женственность и уверенность!",
+      author: "Юлия К.",
+      rating: 5
+    },
+    {
+      content: "Как организатор доступной среды, включаю ваш магазин в список must-have для подопечных. Сочетание цены и качества идеально!",
+      author: "Павел Ш.",
+      rating: 5
+    },
+    {
+      content: "Впервые за 15 лет нашла пижаму, которая не вызывает ночного зуда. Благодарю за внимание к деталям!",
+      author: "Лариса Г.",
+      rating: 5
+    },
+    {
+      content: "Ваш сайт - образец доступности! Все продумано для людей с разными формами инвалидности. Браво команде!",
+      author: "Максим В.",
+      rating: 5
+    },
+    {
+      content: "Заказал 5 вещей - все идеально сели по фигуре, несмотря на нестандартные пропорции из-за сколиоза.",
+      author: "Артур П.",
+      rating: 5
+    },
+    {
+      content: "Как эксперт по инклюзивному дизайну, ставлю вашему проекту высший балл. Вы задаете новые стандарты в индустрии!",
+      author: "Мария Л.",
       rating: 5
     }
   ];
@@ -155,77 +249,77 @@ function initProductItems() {
   const products = [
     {
       id: 1,
-      name: "Organic Cotton T-Shirt",
-      price: "$34.99",
+      name: "Кофта из органического хлопка",
+      price: "3499Р",
       image: "data/item (1).jpg",
-      shortDesc: "Ultra-soft organic cotton, perfect for sensitive skin.",
-      fullDesc: "Our signature organic cotton t-shirt is specifically designed for people with Histamine Intolerance. Made from 100% GOTS-certified organic cotton, it's free from harmful chemicals and dyes that could trigger reactions.",
+      shortDesc: "Сверхмягкий органический хлопок, идеально подходит для чувствительной кожи.",
+      fullDesc: "Эта кофта из органического хлопка создана с заботой о людях с гистаминовой непереносимостью. Изготовлена из 100% органического хлопка, сертифицированного по стандарту GOTS, что гарантирует отсутствие химикатов и минимизирует возможные реакции.",
       features: [
-        "100% organic cotton",
-        "No chemical treatments",
-        "Hypoallergenic dyes",
-        "Tagless design to prevent irritation",
-        "Available in sizes XS-XXL"
+        "100% органический хлопок",
+        "Без вредных химикатов и красителей",
+        "Гипоаллергенные красители",
+        "Бесшовный дизайн для комфорта",
+        "Доступна в размерах M-XXL"
       ]
     },
     {
       id: 2,
-      name: "Bamboo Blend Long-Sleeve",
-      price: "$42.99",
+      name: "Лонгслив из бамбуковой ткани",
+      price: "4299Р",
       image: "data/item (2).jpg",
-      shortDesc: "Cooling bamboo blend that's gentle on sensitive skin.",
-      fullDesc: "Experience the luxurious comfort of our bamboo-blend long sleeve shirt. Bamboo fabric is naturally anti-bacterial and temperature regulating, making it ideal for those with skin sensitivities.",
+      shortDesc: "Охлаждающая бамбуковая ткань, нежная для чувствительной кожи.",
+      fullDesc: "Насладитесь максимальным комфортом с нашим лонгсливом из бамбуковой ткани. Натуральные свойства бамбука обеспечивают антибактериальный эффект и терморегуляцию, что делает его идеальным для людей с чувствительной кожей.",
       features: [
-        "70% bamboo, 30% organic cotton",
-        "Naturally antibacterial",
-        "Moisture-wicking properties",
-        "Temperature regulating",
-        "Extended cuffs for comfort"
+        "70% бамбук, 30% органический хлопок",
+        "Натуральная антибактериальная ткань",
+        "Влагоотводящие свойства",
+        "Терморегуляция",
+        "Удлиненные манжеты для дополнительного комфорта"
       ]
     },
     {
       id: 3,
-      name: "Linen Button-Up Shirt",
-      price: "$49.99",
+      name: "Рубашка из льна",
+      price: "4999Р",
       image: "data/item (3).jpg",
-      shortDesc: "Breathable linen shirt for everyday comfort.",
-      fullDesc: "Our linen button-up offers unparalleled breathability and comfort. Made from pure European flax, this shirt is processed without harsh chemicals, making it perfect for those with histamine sensitivity.",
+      shortDesc: "Дышащая льняная рубашка для повседневного комфорта.",
+      fullDesc: "Наша льняная рубашка обеспечивает непревзойденную воздухопроницаемость и комфорт. Изготовлена из чистого европейского льна с экологически чистой обработкой, что делает ее безопасной и удобной для людей с чувствительностью к гистамину.",
       features: [
-        "100% natural linen",
-        "Eco-friendly processing",
-        "Coconut shell buttons",
-        "Relaxed fit for comfort",
-        "Pre-washed for softness"
+        "100% натуральный лен",
+        "Обработана без агрессивных химикатов",
+        "Экологичные пуговицы из кокосовой скорлупы",
+        "Свободный крой для комфорта в течение всего дня",
+        "Предварительно выстирана для мягкости"
       ]
     },
     {
       id: 4,
-      name: "Modal Lounge Tee",
-      price: "$39.99",
+      name: "Блузка из модала",
+      price: "3999Р",
       image: "data/item (4).jpg",
-      shortDesc: "Ultra-soft modal fabric for all-day comfort.",
-      fullDesc: "Our Modal Lounge Tee is crafted from beechwood trees using an eco-friendly process. The result is an incredibly soft, lightweight fabric that feels amazing against sensitive skin.",
+      shortDesc: "Сверхмягкая ткань из модала для комфорта в течение всего дня.",
+      fullDesc: "Блузка из модала изготовлена из волокон буковой древесины с использованием экологичного процесса. Результат — невероятно мягкая, легкая ткань, которая нежно соприкасается с чувствительной кожей.",
       features: [
-        "100% modal fabric",
-        "Silky-soft texture",
-        "Highly breathable",
-        "Biodegradable material",
-        "Minimal seams for comfort"
+        "100% модал",
+        "Шелковистая текстура",
+        "Высокая воздухопроницаемость",
+        "Биоразлагаемый материал",
+        "Минимальное количество швов для комфорта"
       ]
     },
     {
       id: 5,
-      name: "Hemp Blend Casual Shirt",
-      price: "$45.99",
+      name: "Повседневная рубашка из льна",
+      price: "4599Р",
       image: "data/item (5).jpg",
-      shortDesc: "Durable hemp blend that gets softer with each wash.",
-      fullDesc: "Our hemp blend shirt combines sustainability with comfort. Hemp requires no pesticides to grow and becomes softer with each wash, making this shirt a long-lasting addition to your wardrobe.",
+      shortDesc: "Прочная ткань из льна, которая становится мягче с каждой стиркой.",
+      fullDesc: "Наша повседневная рубашка из льна сочетает устойчивость и комфорт. Лен выращивается без пестицидов и становится мягче с каждой стиркой, что делает ее долговечным выбором для вашего гардероба.",
       features: [
-        "55% hemp, 45% organic cotton",
-        "Pesticide-free production",
-        "Naturally UV resistant",
-        "Durable construction",
-        "Gets softer over time"
+        "55% лен, 45% органический хлопок",
+        "Производство без пестицидов",
+        "Естественная защита от УФ-излучения",
+        "Прочная конструкция для долговечности",
+        "Становится мягче со временем"
       ]
     }
   ];
@@ -282,13 +376,13 @@ function initProductItems() {
         <p class="modal-description">${product.fullDesc}</p>
         
         <div class="product-features">
-          <h4>Features:</h4>
+          <h4>Особенности:</h4>
           <ul>
             ${product.features.map(feature => `<li>${feature}</li>`).join('')}
           </ul>
         </div>
         
-        <button class="btn modal-btn">Add to Cart</button>
+        <button class="btn modal-btn">В корзину</button>
       </div>
     `;
     

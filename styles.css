@@ -417,7 +417,7 @@ nav ul li {
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   padding: 20px;
   transform: scale(0.7);
-  transition: transform 0.3s ease;
+  transition: transform 0.2s ease;
 }
 
 .modal.show .modal-content {
@@ -445,6 +445,7 @@ nav ul li {
 }
 
 .modal-image {
+  margin: auto;
   flex: 1;
   min-width: 300px;
 }
