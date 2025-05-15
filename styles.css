@@ -412,12 +412,14 @@ nav ul li {
   position: relative;
   background-color: white;
   width: 90%;
+  max-height: 80%;
   max-width: 800px;
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   padding: 20px;
   transform: scale(0.7);
   transition: transform 0.2s ease;
+  overflow-y: auto;
 }
 
 .modal.show .modal-content {
@@ -425,9 +427,9 @@ nav ul li {
 }
 
 .close-modal {
-  position: absolute;
-  top: 15px;
-  right: 20px;
+  position: sticky;
+  top: 10px;
+  left: 96%;
   font-size: 1.8rem;
   color: #aaa;
   cursor: pointer;
