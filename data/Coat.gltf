@@ -1,0 +1,339 @@
+{
+  "asset": {
+    "extras": {
+      "author": "DanlyVostok (https://sketchfab.com/1799danly)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/low-poly-military-jacket-tactical-top-2ffa0b4b4eef454aaa8886f21ef94bc9",
+      "title": "Low Poly Military Jacket Tactical Top"
+    },
+    "generator": "Coat",
+    "version": "2.0"
+  },
+  "buffers": [
+    {
+      "uri": "Coat.bin",
+      "byteLength": 130872
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 45600,
+      "byteStride": 24,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 45600,
+      "byteLength": 30400,
+      "byteStride": 16,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 76000,
+      "byteLength": 15200,
+      "byteStride": 8,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 91200,
+      "byteLength": 39672,
+      "target": 34963
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "byteOffset": 0,
+      "componentType": 5126,
+      "normalized": false,
+      "count": 1900,
+      "min": [
+        -0.999602735042572,
+        -0.9999669790267944,
+        -0.9983213543891907
+      ],
+      "max": [
+        0.9973564147949219,
+        0.9999035000801086,
+        0.9967085123062134
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 12,
+      "componentType": 5126,
+      "normalized": false,
+      "count": 1900,
+      "min": [
+        -53.584556579589844,
+        -19.55489158630371,
+        83.80998992919922
+      ],
+      "max": [
+        54.94725036621094,
+        11.704030990600586,
+        155.18289184570312
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 0,
+      "componentType": 5126,
+      "normalized": false,
+      "count": 1900,
+      "min": [
+        -0.9999421834945679,
+        -0.9999907612800598,
+        -0.9944681525230408,
+        -1
+      ],
+      "max": [
+        0.9998884797096252,
+        0.9977956414222717,
+        0.9766957759857178,
+        1
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 0,
+      "componentType": 5126,
+      "normalized": false,
+      "count": 1900,
+      "min": [
+        0.011794843710958958,
+        0.01337289810180664
+      ],
+      "max": [
+        0.9850806593894958,
+        0.9955637454986572
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 0,
+      "componentType": 5125,
+      "normalized": false,
+      "count": 9918,
+      "min": [
+        0
+      ],
+      "max": [
+        1899
+      ],
+      "type": "SCALAR"
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        5
+      ],
+      "name": "Coat"
+    }
+  ],
+  "nodes": [
+    {
+      "name": "default776563456_Material #45_0",
+      "extensions": {
+        "KHR_node_visibility": {
+          "visible": true
+        }
+      },
+      "mesh": 0
+    },
+    {
+      "name": "Object_4",
+      "children": [
+        0
+      ],
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1,
+        0,
+        -0.2391815185546875,
+        9.516441345214844,
+        -119.03877258300781,
+        1
+      ],
+      "extensions": {
+        "KHR_node_visibility": {
+          "visible": true
+        }
+      }
+    },
+    {
+      "name": "default776563456",
+      "children": [
+        1
+      ],
+      "matrix": [
+        0.41306498646736145,
+        0,
+        0,
+        0,
+        0,
+        1.4138612058900435e-8,
+        -0.41306498646736145,
+        0,
+        0,
+        0.41306498646736145,
+        1.4138612058900435e-8,
+        0,
+        -0.25156983733177185,
+        48.41901397705078,
+        2.147244453430176,
+        1
+      ],
+      "extensions": {
+        "KHR_node_visibility": {
+          "visible": true
+        }
+      }
+    },
+    {
+      "name": "RootNode",
+      "children": [
+        2
+      ],
+      "extensions": {
+        "KHR_node_visibility": {
+          "visible": true
+        }
+      }
+    },
+    {
+      "name": "Kitel Low Poly Final.fbx",
+      "children": [
+        3
+      ],
+      "matrix": [
+        0.02539999969303608,
+        0,
+        0,
+        0,
+        0,
+        8.694049369317725e-10,
+        0.02539999969303608,
+        0,
+        0,
+        -0.02539999969303608,
+        8.694049369317725e-10,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "extensions": {
+        "KHR_node_visibility": {
+          "visible": true
+        }
+      }
+    },
+    {
+      "name": "Coat",
+      "children": [
+        4
+      ],
+      "matrix": [
+        1.1513543128967285,
+        0,
+        0,
+        0,
+        0,
+        3.940917991940296e-8,
+        -1.1513543128967285,
+        0,
+        0,
+        1.1513543128967285,
+        3.940917991940296e-8,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "extensions": {
+        "KHR_node_visibility": {
+          "visible": true
+        }
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "primitives": [
+        {
+          "material": 0,
+          "mode": 4,
+          "attributes": {
+            "NORMAL": 0,
+            "POSITION": 1,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 4
+        }
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "name": "Coat",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 1
+      },
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "alphaMode": "OPAQUE",
+      "doubleSided": true,
+      "extensions": {
+        "KHR_materials_specular": {
+          "specularFactor": 1,
+          "specularColorFactor": [
+            1,
+            1,
+            1
+          ]
+        },
+        "KHR_materials_ior": {
+          "ior": 1000
+        }
+      }
+    }
+  ],
+  "extensionsUsed": [
+    "KHR_node_visibility",
+    "KHR_materials_specular",
+    "KHR_materials_ior"
+  ]
+}

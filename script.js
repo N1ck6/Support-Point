@@ -511,6 +511,8 @@ function initProductItems() {
       price: "3499Р",
       image: "data/item (1).jpg",
       image2: "data/item1 (1).jpg",
+      texture: "data/texture item (1).jpg",
+      model: "data/coat.gltf",
       shortDesc: "Сверхмягкий органический хлопок, идеально подходит для чувствительной кожи.",
       fullDesc: "Эта кофта из органического хлопка создана с заботой о людях с гистаминовой непереносимостью. Изготовлена из 100% органического хлопка, сертифицированного по стандарту GOTS, что гарантирует отсутствие химикатов и минимизирует возможные реакции.",
       features: [
@@ -527,6 +529,8 @@ function initProductItems() {
       price: "4299Р",
       image: "data/item (2).jpg",
       image2: "data/item1 (2).jpg",
+      texture: "data/texture item (2).jpg",
+      model: "data/coat.gltf",
       shortDesc: "Охлаждающая бамбуковая ткань, нежная для чувствительной кожи.",
       fullDesc: "Насладитесь максимальным комфортом с нашим лонгсливом из бамбуковой ткани. Натуральные свойства бамбука обеспечивают антибактериальный эффект и терморегуляцию, что делает его идеальным для людей с чувствительной кожей.",
       features: [
@@ -543,6 +547,8 @@ function initProductItems() {
       price: "4999Р",
       image: "data/item (3).jpg",
       image2: "data/item1 (3).jpg",
+      texture: "data/texture item (3).jpg",
+      model: "data/coat.gltf",
       shortDesc: "Дышащая льняная рубашка для повседневного комфорта.",
       fullDesc: "Наша льняная рубашка обеспечивает непревзойденную воздухопроницаемость и комфорт. Изготовлена из чистого европейского льна с экологически чистой обработкой, что делает ее безопасной и удобной для людей с чувствительностью к гистамину.",
       features: [
@@ -559,6 +565,8 @@ function initProductItems() {
       price: "3999Р",
       image: "data/item (4).jpg",
       image2: "data/item1 (4).jpg",
+      texture: "data/texture item (4).jpg",
+      model: "data/coat.gltf",
       shortDesc: "Сверхмягкая ткань из модала для комфорта в течение всего дня.",
       fullDesc: "Блузка из модала изготовлена из волокон буковой древесины с использованием экологичного процесса. Результат — невероятно мягкая, легкая ткань, которая нежно соприкасается с чувствительной кожей.",
       features: [
@@ -575,6 +583,8 @@ function initProductItems() {
       price: "4599Р",
       image: "data/item (5).jpg",
       image2: "data/item1 (5).jpg",
+      texture: "data/texture item (5).jpg",
+      model: "data/coat.gltf",
       shortDesc: "Прочная ткань из льна, которая становится мягче с каждой стиркой.",
       fullDesc: "Наша повседневная рубашка из льна сочетает устойчивость и комфорт. Лен выращивается без пестицидов и становится мягче с каждой стиркой, что делает ее долговечным выбором для вашего гардероба.",
       features: [
@@ -589,7 +599,9 @@ function initProductItems() {
       id: 6,
       name: "Создайте свой собственный дизайн",
       price: "5999Р",
-      image: "data/item (5).jpg", // Using a placeholder image initially
+      image: "data/item (5).jpg",
+      texture: "data/texture gray.jpg",
+      model: "data/coat.gltf",
       shortDesc: "Разработайте свою уникальную одежду с помощью нашего 3D конфигуратора.",
       fullDesc: "Наш уникальный 3D конфигуратор позволяет вам создать индивидуальный дизайн одежды. Загрузите свое изображение или фотографию, и мы применим ее в качестве текстуры к вашей одежде. Создайте что-то уникальное, что отражает вашу индивидуальность.",
       features: [
@@ -731,9 +743,11 @@ function initProductItems() {
         threedContainer.classList.add('show');
         
         // Initialize 3D viewer if not already initialized
-        if (!threedContainer.hasChildNodes()) {
-          init3DViewer(threedContainer, product, false);
-        }
+        setTimeout(() => {
+          if (!threedContainer.children.length) {
+            init3DViewer(threedContainer, product, false);
+          }
+        }, 100);
       }
     });
     
@@ -885,102 +899,147 @@ function initProductItems() {
   }
 }
   
-  // Initialize 3D Model Viewer
-  function init3DViewer(container, product, isCustomizable) {
-    // Set up scene
-    const scene = new THREE.Scene();
-    scene.background = new THREE.Color(0xf8f9fa);
-    
-    // Set up camera
-    const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
-    camera.position.z = 5;
-    
-    // Set up renderer
-    const renderer = new THREE.WebGLRenderer({ antialias: true });
-    renderer.setSize(container.clientWidth, container.clientHeight);
-    container.appendChild(renderer.domElement);
-    
-    // Set up lights
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
-    scene.add(ambientLight);
-    
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
-    directionalLight.position.set(0, 10, 10);
-    scene.add(directionalLight);
-    
-    // Create a simple coat geometry (using a box for simplicity)
-    // In a real application, you would load a proper 3D model of a coat
-    const geometry = new THREE.BoxGeometry(3, 4, 1);
-    
-    // Create base texture and material
-    const texture = new THREE.Texture();
-    const material = new THREE.MeshStandardMaterial({
-      map: texture,
-      roughness: 0.7,
-      metalness: 0.0
-    });
-    
-    // Create coat mesh
-    const coat = new THREE.Mesh(geometry, material);
-    scene.add(coat);
-    
-    // Set up orbit controls for rotation
-    const controls = new THREE.OrbitControls(camera, renderer.domElement);
-    controls.enableZoom = false;
-    controls.enablePan = false;
-    controls.rotateSpeed = 0.5;
-    controls.maxPolarAngle = Math.PI / 1.5;
-    controls.minPolarAngle = Math.PI / 2.5;
-    
-    // Limit rotation to horizontal only
-    controls.minAzimuthAngle = -Math.PI / 3;
-    controls.maxAzimuthAngle = Math.PI / 3;
-    
-    // Animation loop
-    function animate() {
-      requestAnimationFrame(animate);
-      controls.update();
-      renderer.render(scene, camera);
-    }
-    animate();
-    
-    // Handle window resize
-    window.addEventListener('resize', () => {
-      if (container.clientWidth > 0 && container.clientHeight > 0) {
-        camera.aspect = container.clientWidth / container.clientHeight;
-        camera.updateProjectionMatrix();
-        renderer.setSize(container.clientWidth, container.clientHeight);
-      }
-    });
-    
-    // Load default texture if this is customizable
-    if (isCustomizable) {
-      // Default solid color texture
-      const canvas = document.createElement('canvas');
-      canvas.width = 512;
-      canvas.height = 512;
-      const ctx = canvas.getContext('2d');
-      ctx.fillStyle = '#b6c9d6';
-      ctx.fillRect(0, 0, 512, 512);
+// Initialize 3D Model Viewer
+function init3DViewer(container, product, isCustomizable) {
+  // Set up scene
+  const scene = new THREE.Scene();
+  scene.background = new THREE.Color(0xf8f9fa);
+  
+  // Set up camera
+  const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight || 1, 0.1, 1000);
+  camera.position.set(0, 2, 6);
+  
+  // Set up renderer
+  const renderer = new THREE.WebGLRenderer({ antialias: true });
+  renderer.setSize(container.clientWidth, container.clientHeight);
+  container.appendChild(renderer.domElement);
+  
+  // Set up lights
+  const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
+  scene.add(ambientLight);
+  
+  const directionalLight = new THREE.DirectionalLight(0xffffff, 1.0);
+  directionalLight.position.set(5, 10, 7);
+  scene.add(directionalLight);
+  
+  // Load 3D model
+  let model;
+
+  const loader = new THREE.GLTFLoader();
+  loader.load(
+    product.model,
+    (gltf) => {
+      model = gltf.scene;
       
-      const defaultImage = new Image();
-      defaultImage.onload = function() {
-        texture.image = defaultImage;
-        texture.needsUpdate = true;
-      };
-      defaultImage.src = canvas.toDataURL();
-    } else {
-      // Load product texture
-      const productImage = new Image();
-      productImage.onload = function() {
-        texture.image = productImage;
-        texture.needsUpdate = true;
-      };
-      productImage.src = product.image;
+      // Apply texture to all materials in the model
+      model.traverse((child) => {
+        if (child.isMesh) {
+          // Store original material for reset
+          child.originalMaterial = child.material;
+          
+          // Create material with texture
+          const texture = new THREE.TextureLoader().load(product.texture);
+          child.material = new THREE.MeshStandardMaterial({
+            map: texture,
+            roughness: 0.7,
+            metalness: 0.0
+          });
+        }
+      });
+      
+      // Scale and position model
+      model.scale.set(2, 2, 2);
+      model.position.set(0, -3, 0);
+      scene.add(model);
+      animate();
+    },
+    undefined,
+    (error) => {
+      console.error('Error loading 3D model:', error);
+      showNotification('Ошибка загрузки 3D модели', 'error');
     }
-    
-    return texture;
+  );
+  
+  const controls = new THREE.OrbitControls(camera, renderer.domElement);
+  controls.rotateSpeed = 0.5;
+  controls.minPolarAngle = -Infinity;
+  controls.maxPolarAngle = Infinity;
+  controls.minAzimuthAngle = -Infinity;
+  controls.maxAzimuthAngle = Infinity;
+
+  controls.enableDamping = true;
+  controls.dampingFactor = 0.05;
+
+  // Animation loop
+  function animate() {
+    requestAnimationFrame(animate);
+    controls.update();
+    renderer.render(scene, camera);
   }
+  
+  // Handle window resize
+  window.addEventListener('resize', () => {
+    if (container.clientWidth > 0 && container.clientHeight > 0) {
+      camera.aspect = container.clientWidth / container.clientHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(container.clientWidth, container.clientHeight);
+    }
+  });
+  
+  // Load default texture if this is customizable
+  if (isCustomizable) {
+    // Return a texture setter for customization
+    const textureSetter = {
+      setTexture: (newTexture) => {
+        if (model) {
+          model.traverse((child) => {
+            if (child.isMesh) {
+              child.material.map = newTexture;
+              child.material.needsUpdate = true;
+            }
+          });
+        }
+      }
+    };
+    
+    // Create default texture
+    const defaultTexture = createDefaultTexture();
+    textureSetter.setTexture(defaultTexture);
+    
+    return textureSetter;
+  }
+}
+
+function createDefaultTexture() {
+  const canvas = document.createElement('canvas');
+  canvas.width = 512;
+  canvas.height = 512;
+  const ctx = canvas.getContext('2d');
+  
+  // Create gradient background
+  const gradient = ctx.createLinearGradient(0, 0, 512, 512);
+  gradient.addColorStop(0, '#b6c9d6');
+  gradient.addColorStop(1, '#d6e4f0');
+  ctx.fillStyle = gradient;
+  ctx.fillRect(0, 0, 512, 512);
+  
+  // Add pattern
+  ctx.strokeStyle = '#a0b8d8';
+  ctx.lineWidth = 2;
+  for (let i = 50; i < 512; i += 100) {
+    ctx.beginPath();
+    ctx.moveTo(i, 0);
+    ctx.lineTo(512, 512 - i);
+    ctx.stroke();
+  }
+  
+  const defaultTexture = new THREE.CanvasTexture(canvas);
+  defaultTexture.wrapS = THREE.RepeatWrapping;
+  defaultTexture.wrapT = THREE.RepeatWrapping;
+  defaultTexture.repeat.set(1, 1);
+  
+  return defaultTexture;
+}
 
 // User Design Storage and Display
 function saveUserDesign(designProduct) {

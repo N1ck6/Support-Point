@@ -544,11 +544,11 @@ nav ul li {
   color: var(--accent-color);
   font-size: 1.3rem;
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .modal-description {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .product-features {
@@ -563,10 +563,6 @@ nav ul li {
   list-style: disc;
   padding-left: 20px;
   margin-bottom: 1rem;
-}
-
-.product-features ul li {
-  margin-bottom: 0.5rem;
 }
 
 .modal-btn {
@@ -590,11 +586,34 @@ nav ul li {
 
 /* 3D View Styles */
 .threed-container {
-  width: 100%;
-  height: 300px;
-  border-radius: 5px;
   position: relative;
+  width: 100%;
+  min-height: 400px;
+  border-radius: 5px;
   overflow: hidden;
+  display: none;
+}
+
+/* Add loading indicator */
+.threed-container::before {
+  content: 'Загрузка модели...';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #666;
+  font-size: 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  z-index: 1;
+}
+
+/* Hide loading indicator when model is loaded */
+.threed-container.show::before {
   display: none;
 }
 
