@@ -214,7 +214,7 @@ nav ul li {
 
 /* Main Section Styles */
 .main-section {
-  padding: 80px 0;
+  padding: 5% 0;
   background-color: var(--secondary-color);
 }
 
@@ -247,12 +247,13 @@ nav ul li {
   overflow: hidden;
   margin: 20px 0;
   height: 300px;
+  text-align: center;
 }
 
 .image-scroller {
   display: flex;
   position: absolute;
-  height: 100%;
+  height: 80%;
   will-change: transform;
 }
 

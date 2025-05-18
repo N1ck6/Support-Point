@@ -63,7 +63,7 @@ function initCart() {
       cartModal.style.display = 'none';
     }, 300);
   });
-  
+
   window.addEventListener('click', event => {
     if (event.target === cartModal) {
       cartModal.classList.remove('show');
@@ -139,7 +139,6 @@ function updateCartView() {
     cartItemsContainer.innerHTML = `
       <div class="empty-cart">
         <p>Ваша корзина пуста</p>
-        <a href="#items" class="btn primary-btn">Перейти к покупкам</a>
       </div>
     `;
     cartTotal.textContent = 'Итого: 0Р';
