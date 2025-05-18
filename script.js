@@ -262,19 +262,18 @@ function initNewsletterForm() {
   });
 }
 
-// Horizontal Image Scroller (replacing carousel)
 function initImageScroller() {
   const customerImages = [
-    'data/carousel (1).png',
-    'data/carousel (2).png',
-    'data/carousel (3).png',
-    'data/carousel (4).png',
-    'data/carousel (5).png',
-    'data/carousel (6).png',
-    'data/carousel (7).png',
-    'data/carousel (8).png',
-    'data/carousel (9).png',
-    'data/carousel (10).png'
+    'data/carousel (1).jpg',
+    'data/carousel (2).jpg',
+    'data/carousel (3).jpg',
+    'data/carousel (4).jpg',
+    'data/carousel (5).jpg',
+    'data/carousel (6).jpg',
+    'data/carousel (7).jpg',
+    'data/carousel (8).jpg',
+    'data/carousel (9).jpg',
+    'data/carousel (10).jpg'
   ];
 
   const scrollerContainer = document.querySelector('.image-scroller');
