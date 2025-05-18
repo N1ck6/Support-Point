@@ -966,6 +966,7 @@ function init3DViewer(container, product, isCustomizable) {
   controls.maxPolarAngle = Infinity;
   controls.minAzimuthAngle = -Infinity;
   controls.maxAzimuthAngle = Infinity;
+  controls.enablePan = false;
 
   controls.enableDamping = true;
   controls.dampingFactor = 0.05;
