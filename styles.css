@@ -24,6 +24,20 @@ body {
   overflow-x: hidden;
 }
 
+img {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  pointer-events: none;
+}
+
+h1, h2, h3, p, a {
+  -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 .container {
   width: 90%;
   max-width: 1200px;
