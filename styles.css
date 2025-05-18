@@ -238,7 +238,6 @@ nav ul li {
 .image-scroller {
   display: flex;
   position: absolute;
-  transition: transform 0.5s linear;
   height: 100%;
   will-change: transform;
 }
