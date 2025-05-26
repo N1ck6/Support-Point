@@ -5,15 +5,11 @@ document.addEventListener('DOMContentLoaded', function() {
   initAnimations();
   initSmoothScrolling();
   initCart();
-  initNotificationSystem();
   initNewsletterForm();
   loadUserDesigns();
 });
 
 // Notification System
-function initNotificationSystem() {
-  // Already initialized through structure, just provide the function to show notifications
-}
 
 function showNotification(message, type = 'info') {
   const notificationContainer = document.querySelector('.notification-container');
@@ -243,7 +239,6 @@ function saveCart(cart) {
   localStorage.setItem('cart', JSON.stringify(cart));
 }
 
-// Newsletter form
 function initNewsletterForm() {
   const newsletterForm = document.getElementById('newsletter-form');
   const emailInput = document.getElementById('newsletter-email');
@@ -253,8 +248,6 @@ function initNewsletterForm() {
     
     const email = emailInput.value.trim();
     if (email) {
-      // Here you would normally send the email to your backend
-      // But for this demo, we'll just clear the form and show a notification
       emailInput.value = '';
       showNotification('Спасибо за подписку!', 'success');
     }
@@ -276,34 +269,25 @@ function initImageScroller() {
   ];
 
   const scrollerContainer = document.querySelector('.image-scroller');
-  
-  // Create double set of images for infinite scrolling effect
   const allImages = [...customerImages, ...customerImages];
-  
   allImages.forEach(imgSrc => {
     const item = document.createElement('div');
     item.classList.add('scroller-item');
-    
     const img = document.createElement('img');
     img.src = imgSrc;
-    img.alt = "Счастливый клиент";
-    
     item.appendChild(img);
     scrollerContainer.appendChild(item);
   });
   
-  // Set initial position and width
-  const scrollerWidth = customerImages.length * 265; // 250px width + 15px margin
-  scrollerContainer.style.width = `${scrollerWidth * 2}px`; // Double for the duplicate set
+  const scrollerWidth = customerImages.length * 265;
+  scrollerContainer.style.width = `${scrollerWidth * 2}px`;
   
-  // Animate the scroller
   let position = 0;
-  const speed = 0.5; // pixels per frame
+  const speed = 0.5;
   
   function animateScroller() {
     position -= speed;
     
-    // Reset position when first set of images has scrolled past
     if (position <= -scrollerWidth) {
       position = 0;
     }
@@ -502,7 +486,7 @@ function initTestimonials() {
 }
 
 function initProductItems() {
-  const products = [
+  const light_top = [
     {
       id: 1,
       name: "Кофта из органического хлопка",
@@ -510,7 +494,7 @@ function initProductItems() {
       image: "data/item (1).jpg",
       image2: "data/item1 (1).jpg",
       texture: "data/texture item (1).jpg",
-      model: "data/coat.gltf",
+      model: "data/Shirt.gltf",
       shortDesc: "Сверхмягкий органический хлопок, идеально подходит для чувствительной кожи.",
       fullDesc: "Эта кофта из органического хлопка создана с заботой о людях с гистаминовой непереносимостью. Изготовлена из 100% органического хлопка, сертифицированного по стандарту GOTS, что гарантирует отсутствие химикатов и минимизирует возможные реакции.",
       features: [
@@ -564,7 +548,7 @@ function initProductItems() {
       image: "data/item (4).jpg",
       image2: "data/item1 (4).jpg",
       texture: "data/texture item (4).jpg",
-      model: "data/coat.gltf",
+      model: "data/Shirt.gltf",
       shortDesc: "Сверхмягкая ткань из модала для комфорта в течение всего дня.",
       fullDesc: "Блузка из модала изготовлена из волокон буковой древесины с использованием экологичного процесса. Результат — невероятно мягкая, легкая ткань, которая нежно соприкасается с чувствительной кожей.",
       features: [
@@ -612,30 +596,310 @@ function initProductItems() {
       is3DCustomizable: true
     }
   ];
+  
+  const warm_top = [
+    {
+    id: 1,
+    name: "Парка с магнитными застежками",
+    price: "$129.99",
+      image: "data/item (6).png",
+      image2: "data/item1 (6).png",
+      texture: "data/texture item (6).png",
+      model: "data/coat.gltf",
+    shortDesc: "Утепленная парка с магнитными застежками вместо пуговиц. Для людей с артритом.",
+    fullDesc: "Парка из водоотталкивающей ткани с термоподкладкой. Магнитные застежки расположены вдоль всей длины, что позволяет легко одеваться одной рукой. Усиленные плечевые швы для ношения рюкзака.",
+    features: [
+      "Магнитные застежки по всей длине",
+      "Съемная подкладка из термофлиса",
+      "Усиленные швы на плечах",
+      "Карманы с подогревом",
+      "Регулируемый капюшон"
+    ]
+  },
+  {
+    id: 2,
+    name: "Утепленная куртка с регулируемым капюшоном",
+    price: "$149.99",
+      image: "data/item (7).png",
+      image2: "data/item1 (7).png",
+      texture: "data/texture item (7).png",
+      model: "data/Shirt.gltf",
+    shortDesc: "Куртка для колясочников с удлиненной спинкой.",
+    fullDesc: "Куртка из мембранной ткани с удлиненной спинкой, предотвращающей задирание при сидении. Капюшон регулируется одной рукой. Внутренние карманы для лекарств.",
+    features: [
+      "Удлиненная спинка (+15 см)",
+      "Молния с крупным бегунком",
+      "Водоотталкивающая ткань",
+      "Светоотражающие элементы",
+      "Ветрозащитная юбка"
+    ]
+  },
+  {
+    id: 3,
+    name: "Жилет с бесшовными боковыми швами",
+    price: "$89.99",
+      image: "data/item (8).png",
+      image2: "data/item1 (8).png",
+      texture: "data/texture item (8).png",
+      model: "data/coat.gltf",
+    shortDesc: "Бесшовный жилет для людей с аутизмом.",
+    fullDesc: "Жилет из мягкого хлопка без боковых швов. Магнитные застежки спереди. Карманы расположены на уровне груди для удобства доступа.",
+    features: [
+      "Бесшовная конструкция",
+      "Гипоаллергенная ткань",
+      "Карманы с магнитными клапанами",
+      "Регулируемая ширина",
+      "4 размера (XS-XXL)"
+    ]
+  },
+  {
+    id: 6,
+    name: "Создайте свой собственный дизайн",
+    price: "5999Р",
+    image: "data/item (5).jpg",
+    texture: "data/texture gray.jpg",
+    model: "data/coat.gltf",
+    shortDesc: "Разработайте свою уникальную одежду с помощью нашего 3D конфигуратора.",
+    fullDesc: "Наш уникальный 3D конфигуратор позволяет вам создать индивидуальный дизайн одежды. Загрузите свое изображение или фотографию, и мы применим ее в качестве текстуры к вашей одежде. Создайте что-то уникальное, что отражает вашу индивидуальность.",
+    features: [
+      "Полностью настраиваемый дизайн",
+      "Высококачественная печать вашего изображения",
+      "Гипоаллергенные чернила и ткани",
+      "Сохраняйте свои дизайны для будущих заказов",
+      "Доступны различные стили и фасоны"
+    ],
+    is3DCustomizable: true
+  }
+  ];
 
-  const itemsGrid = document.querySelector('.items-grid');
+  const light_bottom = [
+    {
+    id: 1,
+    name: "Шорты с боковыми молниями",
+    price: "$49.99",
+      image: "data/item (9).png",
+      image2: "data/item1 (9).png",
+      texture: "data/texture item (9).png",
+      model: "data/coat.gltf",
+    shortDesc: "Шорты для людей с протезами.",
+    fullDesc: "Шорты из дышащего хлопка с боковыми молниями по всей длине. Позволяют легко снимать/надевать протез без раздевания. Усиленная область сидения.",
+    features: [
+      "Молнии на обеих сторонах",
+      "Эластичный пояс без пуговиц",
+      "Карман для ключей на липучке",
+      "Антибактериальная пропитка",
+      "3 цвета (черный, бежевый, синий)"
+    ]
+  },
+  {
+    id: 2,
+    name: "Легкие брюки с эластичным поясом",
+    price: "$59.99",
+      image: "data/item (10).png",
+      image2: "data/item1 (10).png",
+      texture: "data/texture item (10).png",
+      model: "data/coat.gltf",
+    shortDesc: "Брюки для людей с колостомой.",
+    fullDesc: "Брюки из льняной ткани с эластичным поясом и скрытыми карманами для аксессуаров. Боковые швы смещены вперед для комфорта при сидении.",
+    features: [
+      "Пояс с регулируемой шириной",
+      "Скрытые карманы на животе",
+      "Усиленные колени",
+      "Бесшовные манжеты",
+      "Доступны в 5 размерах"
+    ]
+  },
+  {
+    id: 3,
+    name: "Юбка с магнитными застежками",
+    price: "$54.99",
+      image: "data/item (11).png",
+      image2: "data/item1 (11).png",
+      texture: "data/texture item (11).png",
+      model: "data/coat.gltf",
+    shortDesc: "Юбка для женщин с ограниченной подвижностью рук.",
+    fullDesc: "Юбка-карандаш с магнитными застежками по бокам. Подкладка из шелковистого полиэстера предотвращает трение. Длина регулируется кнопками.",
+    features: [
+      "3 магнитные застежки с каждой стороны",
+      "Съемный пояс-корсет",
+      "Карман для телефона на бедре",
+      "Ткань с UPF 50+",
+      "4 размера (S-L)"
+    ]
+  },
+  {
+    id: 4,
+    name: "Капри с карманами для катетеров",
+    price: "$69.99",
+      image: "data/item (12).png",
+      image2: "data/item1 (12).png",
+      texture: "data/texture item (12).png",
+      model: "data/coat.gltf",
+    shortDesc: "Капри для людей с мочевыми катетерами.",
+    fullDesc: "Капри из стрейч-хлопка с внутренними карманами для мешков. Молнии на штанинах для быстрого доступа. Швы обработаны плоскими лентами.",
+    features: [
+      "2 скрытых кармана на внутренней стороне",
+      "Молнии длиной 25 см",
+      "Водоотталкивающая пропитка",
+      "Эластичный пояс без давления на живот",
+      "3 цвета (черный, серый, хаки)"
+    ]
+  },
+  {
+    id: 5,
+    name: "Создайте свой собственный дизайн",
+    price: "5999Р",
+    image: "data/item (5).jpg",
+    texture: "data/texture gray.jpg",
+    model: "data/coat.gltf",
+    shortDesc: "Разработайте свою уникальную одежду с помощью нашего 3D конфигуратора.",
+    fullDesc: "Наш уникальный 3D конфигуратор позволяет вам создать индивидуальный дизайн одежды. Загрузите свое изображение или фотографию, и мы применим ее в качестве текстуры к вашей одежде. Создайте что-то уникальное, что отражает вашу индивидуальность.",
+    features: [
+      "Полностью настраиваемый дизайн",
+      "Высококачественная печать вашего изображения",
+      "Гипоаллергенные чернила и ткани",
+      "Сохраняйте свои дизайны для будущих заказов",
+      "Доступны различные стили и фасоны"
+    ],
+    is3DCustomizable: true
+  }
+  ];
+
+  const warm_bottom = [
+    {
+    id: 1,
+    name: "Утепленные штаны с молниями по всей длине",
+    price: "$99.99",
+      image: "data/item (13).png",
+      image2: "data/item1 (13).png",
+      texture: "data/texture item (13).png",
+      model: "data/coat.gltf",
+    shortDesc: "Штаны для людей с протезами ног.",
+    fullDesc: "Утепленные штаны из мембранной ткани с молниями от пояса до щиколоток. Внутренняя подкладка из флиса. Усиленные колени и сиденье.",
+    features: [
+      "Молнии с двумя бегунками",
+      "Съемный утеплитель",
+      "Светоотражающие полосы",
+      "Карманы с подогревом",
+      "5 размеров (XS-XXL)"
+    ]
+  },
+  {
+    id: 2,
+    name: "Термобелье с бесшовной конструкцией",
+    price: "$44.99",
+      image: "data/item (14).png",
+      image2: "data/item1 (14).png",
+      texture: "data/texture item (14).png",
+      model: "data/Shirt.gltf",
+    shortDesc: "Белье для людей с чувствительной кожей.",
+    fullDesc: "Термобелье из мериносовой шерсти без боковых швов. Плоские этикетки и гипоаллергенные красители. Зона горловины с магнитной застежкой.",
+    features: [
+      "100% мериносовая шерсть",
+      "Бесшовный крой",
+      "Магнитная застежка на шее",
+      "Антибактериальная пропитка",
+      "4 размера (S-XL)"
+    ]
+  },
+  {
+    id: 3,
+    name: "Брюки с подогревом для колясочников",
+    price: "$199.99",
+      image: "data/item (15).png",
+      image2: "data/item1 (15).png",
+      texture: "data/texture item (15).png",
+      model: "data/coat.gltf",
+    shortDesc: "Брюки с USB-подогревом для людей с нарушением кровообращения.",
+    fullDesc: "Брюки из мягкого неопрена с встроенными нагревательными элементами. Управление через приложение. Удлиненная спинка и эластичные манжеты.",
+    features: [
+      "3 температурных режима",
+      "Зарядка от powerbank",
+      "Водонепроницаемая зона сидения",
+      "Съемный внутренний слой",
+      "3 размера (M-XXL)"
+    ]
+  },
+  {
+    id: 4,
+    name: "Зимние лосины с усиленными коленями",
+    price: "$79.99",
+      image: "data/item (16).png",
+      image2: "data/item1 (16).png",
+      texture: "data/texture item (16).png",
+      model: "data/coat.gltf",
+    shortDesc: "Лосины для людей с артрозом.",
+    fullDesc: "Лосины из плотного хлопка с усиленными коленями и эластичным поясом. Внутренние карманы для согревающих пластин. Швы вынесены на внешнюю сторону.",
+    features: [
+      "Двойной слой ткани на коленях",
+      "Карманы для гелевых грелок",
+      "Эластичный пояс без давления",
+      "Антистатическая пропитка",
+      "4 размера (S-XL)"
+    ]
+  },
+  {
+    id: 5,
+    name: "Создайте свой собственный дизайн",
+    price: "5999Р",
+    image: "data/item (5).jpg",
+    texture: "data/texture gray.jpg",
+    model: "data/coat.gltf",
+    shortDesc: "Разработайте свою уникальную одежду с помощью нашего 3D конфигуратора.",
+    fullDesc: "Наш уникальный 3D конфигуратор позволяет вам создать индивидуальный дизайн одежды. Загрузите свое изображение или фотографию, и мы применим ее в качестве текстуры к вашей одежде. Создайте что-то уникальное, что отражает вашу индивидуальность.",
+    features: [
+      "Полностью настраиваемый дизайн",
+      "Высококачественная печать вашего изображения",
+      "Гипоаллергенные чернила и ткани",
+      "Сохраняйте свои дизайны для будущих заказов",
+      "Доступны различные стили и фасоны"
+    ],
+    is3DCustomizable: true
+  }
+  ];
+
+  const ltopGrid = document.querySelector('.ltop');
+  const wtopGrid = document.querySelector('.wtop');
+  const lbottomGrid = document.querySelector('.lbottom');
+  const wbottomGrid = document.querySelector('.wbottom');
   const modal = document.getElementById('item-modal');
   const closeModal = document.querySelector('#item-modal .close-modal');
   const modalBody = document.querySelector('#item-modal .modal-body');
 
-  products.forEach(product => {
+  light_top.forEach(product => {
     const card = document.createElement('div');
     card.classList.add('item-card');
     card.setAttribute('data-id', product.id);
-    
-    card.innerHTML = `
-      <div class="item-image">
-        <img src="${product.image}" alt="${product.name}">
-      </div>
-      <div class="item-info">
-        <h3 class="item-title">${product.name}</h3>
-        <p class="item-price">${product.price}</p>
-        <p class="item-description">${product.shortDesc}</p>
-      </div>
-    `;
-    
+    card.innerHTML = `<div class="item-image"><img src="${product.image}" alt="${product.name}"></div><div class="item-info"><h3 class="item-title">${product.name}</h3><p class="item-price">${product.price}</p><p class="item-description">${product.shortDesc}</p></div>`;
     card.addEventListener('click', () => showProductModal(product));
-    itemsGrid.appendChild(card);
+    ltopGrid.appendChild(card);
+  });
+
+  warm_top.forEach(product => {
+    const card = document.createElement('div');
+    card.classList.add('item-card');
+    card.setAttribute('data-id', product.id);
+    card.innerHTML = `<div class="item-image"><img src="${product.image}" alt="${product.name}"></div><div class="item-info"><h3 class="item-title">${product.name}</h3><p class="item-price">${product.price}</p><p class="item-description">${product.shortDesc}</p></div>`;
+    card.addEventListener('click', () => showProductModal(product));
+    wtopGrid.appendChild(card);
+  });
+
+  light_bottom.forEach(product => {
+    const card = document.createElement('div');
+    card.classList.add('item-card');
+    card.setAttribute('data-id', product.id);
+    card.innerHTML = `<div class="item-image"><img src="${product.image}" alt="${product.name}"></div><div class="item-info"><h3 class="item-title">${product.name}</h3><p class="item-price">${product.price}</p><p class="item-description">${product.shortDesc}</p></div>`;
+    card.addEventListener('click', () => showProductModal(product));
+    lbottomGrid.appendChild(card);
+  });
+
+  warm_bottom.forEach(product => {
+    const card = document.createElement('div');
+    card.classList.add('item-card');
+    card.setAttribute('data-id', product.id);
+    card.innerHTML = `<div class="item-image"><img src="${product.image}" alt="${product.name}"></div><div class="item-info"><h3 class="item-title">${product.name}</h3><p class="item-price">${product.price}</p><p class="item-description">${product.shortDesc}</p></div>`;
+    card.addEventListener('click', () => showProductModal(product));
+    wbottomGrid.appendChild(card);
   });
 
   closeModal.addEventListener('click', () => {
@@ -655,7 +919,6 @@ function initProductItems() {
   });
 
   function showProductModal(product) {
-    // Create modal content based on product type
     if (product.is3DCustomizable) {
       show3DCustomizableProduct(product);
     } else {
@@ -947,7 +1210,8 @@ function init3DViewer(container, product, isCustomizable) {
       
       // Scale and position model
       model.scale.set(2, 2, 2);
-      model.position.set(0, -3, 0);
+      if (product.model == "data/coat.gltf") model.position.set(0, -8, 0);
+      else if (product.model == "data/Shirt.gltf") model.position.set(0, -6, 0);
       scene.add(model);
       animate();
     },
@@ -1045,8 +1309,6 @@ function saveUserDesign(designProduct) {
   let designs = JSON.parse(localStorage.getItem('userDesigns')) || [];
   designs.push(designProduct);
   localStorage.setItem('userDesigns', JSON.stringify(designs));
-  
-  // Refresh the user designs display
   loadUserDesigns();
 }
 

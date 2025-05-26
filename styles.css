@@ -31,7 +31,7 @@ img {
   pointer-events: none;
 }
 
-h1, h2, h3, p, a {
+h1, h2, h3, p, a, li {
   -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -47,6 +47,7 @@ h1, h2, h3, p, a {
 
 h1, h2, h3, h4 {
   margin-bottom: 1rem;
+  margin-top: 1rem;
   line-height: 1.2;
 }
 
@@ -378,10 +379,13 @@ nav ul li {
 }
 
 .items-section h2 {
-  text-align: center;
   margin-bottom: 40px;
   font-size: 2.2rem;
   color: var(--dark-color);
+}
+
+.shop-main {
+  text-align: center;
 }
 
 .items-grid {
@@ -405,7 +409,7 @@ nav ul li {
 }
 
 .item-image {
-  height: 200px;
+  height: 350px;
   overflow: hidden;
 }
 
@@ -438,6 +442,10 @@ nav ul li {
 .item-description {
   font-size: 0.9rem;
   color: var(--text-color);
+}
+
+.shop-header {
+  margin-top: 3rem;
 }
 
 /* Modal Styles */
