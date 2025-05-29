@@ -1,0 +1,237 @@
+{
+  "asset": {
+    "extras": {
+      "author": "Alexander Kurmanin (https://sketchfab.com/kurmanin)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/male-cargo-pants-3b54687837684dfea0552291c0ab88bc",
+      "title": "Male Cargo pants"
+    },
+    "generator": "Sketchfab-16.10.0",
+    "version": "2.0"
+  },
+  "buffers": [
+    {
+      "uri": "Pants.bin",
+      "byteLength": 390336
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 135072,
+      "byteStride": 24,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 135072,
+      "byteLength": 90048,
+      "byteStride": 16,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 225120,
+      "byteLength": 45024,
+      "byteStride": 8,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 270144,
+      "byteLength": 120192,
+      "target": 34963
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "byteOffset": 0,
+      "componentType": 5126,
+      "normalized": false,
+      "count": 5628,
+      "min": [
+        -0.9998324513435364,
+        -0.9999697208404541,
+        -0.9999769926071167
+      ],
+      "max": [
+        0.9998194575309753,
+        0.9999911785125732,
+        0.8542211651802063
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 12,
+      "componentType": 5126,
+      "normalized": false,
+      "count": 5628,
+      "min": [
+        -0.20214000344276428,
+        -0.15780499577522278,
+        0.08274699747562408
+      ],
+      "max": [
+        0.20094400644302368,
+        0.12840799987316132,
+        1.0467569828033447
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 0,
+      "componentType": 5126,
+      "normalized": false,
+      "count": 5628,
+      "min": [
+        -0.999997079372406,
+        -0.9999916553497314,
+        -0.8010997772216797,
+        -1
+      ],
+      "max": [
+        0.9999971985816956,
+        0.9998605847358704,
+        0.9808001518249512,
+        1
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 0,
+      "componentType": 5126,
+      "normalized": false,
+      "count": 5628,
+      "min": [
+        0.0022589999716728926,
+        0.010351000353693962
+      ],
+      "max": [
+        0.9857770204544067,
+        0.9964519739151001
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 0,
+      "componentType": 5125,
+      "normalized": false,
+      "count": 30048,
+      "min": [
+        0
+      ],
+      "max": [
+        5627
+      ],
+      "type": "SCALAR"
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        2
+      ],
+      "name": "Pants"
+    }
+  ],
+  "nodes": [
+    {
+      "name": "Pants",
+      "extensions": {
+        "KHR_node_visibility": {
+          "visible": true
+        }
+      },
+      "mesh": 0
+    },
+    {
+      "name": "Lowpoly_male_cargo.obj.cleaner.materialmerger.gles",
+      "children": [
+        0
+      ],
+      "extensions": {
+        "KHR_node_visibility": {
+          "visible": true
+        }
+      }
+    },
+    {
+      "name": "Sketchfab_model",
+      "children": [
+        1
+      ],
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        3.422854177870249e-8,
+        -0.9999999403953552,
+        0,
+        0,
+        0.9999999403953552,
+        3.422854177870249e-8,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "extensions": {
+        "KHR_node_visibility": {
+          "visible": true
+        }
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "primitives": [
+        {
+          "material": 0,
+          "mode": 4,
+          "attributes": {
+            "NORMAL": 0,
+            "POSITION": 1,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 4
+        }
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "name": "Pants",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallicFactor": 1,
+        "roughnessFactor": 1
+      },
+      "emissiveFactor": [
+        1,
+        1,
+        1
+      ],
+      "alphaMode": "BLEND",
+      "doubleSided": true
+    }
+  ],
+  "extensionsUsed": [
+    "KHR_node_visibility"
+  ]
+}

@@ -1,0 +1,266 @@
+{
+  "asset": {
+    "extras": {
+      "author": "EvTital (https://sketchfab.com/EvTital)",
+      "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
+      "source": "https://sketchfab.com/3d-models/fo4-cmfrt-leggings-f07e801ec2124c69ba6e874606c2c8a7",
+      "title": "FO4 - \"CMFRT+\" Leggings"
+    },
+    "generator": "Sketchfab-16.31.0",
+    "version": "2.0"
+  },
+  "buffers": [
+    {
+      "uri": "Leggings.bin",
+      "byteLength": 419928
+    }
+  ],
+  "bufferViews": [
+    {
+      "buffer": 0,
+      "byteOffset": 0,
+      "byteLength": 142800,
+      "byteStride": 24,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 142800,
+      "byteLength": 95200,
+      "byteStride": 16,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 238000,
+      "byteLength": 47600,
+      "byteStride": 8,
+      "target": 34962
+    },
+    {
+      "buffer": 0,
+      "byteOffset": 285600,
+      "byteLength": 134328,
+      "target": 34963
+    }
+  ],
+  "accessors": [
+    {
+      "bufferView": 0,
+      "byteOffset": 0,
+      "componentType": 5126,
+      "normalized": false,
+      "count": 5950,
+      "min": [
+        -0.999984622001648,
+        -0.9989807605743408,
+        -0.9999554753303528
+      ],
+      "max": [
+        0.9999324679374695,
+        0.9850339889526367,
+        0.9997580051422119
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 0,
+      "byteOffset": 12,
+      "componentType": 5126,
+      "normalized": false,
+      "count": 5950,
+      "min": [
+        -0.40996599197387695,
+        -1,
+        -0.2506270110607147
+      ],
+      "max": [
+        0.40996599197387695,
+        1,
+        0.2506270110607147
+      ],
+      "type": "VEC3"
+    },
+    {
+      "bufferView": 1,
+      "byteOffset": 0,
+      "componentType": 5126,
+      "normalized": false,
+      "count": 5950,
+      "min": [
+        -0.962096631526947,
+        -0.6565470099449158,
+        -0.8034212589263916,
+        1
+      ],
+      "max": [
+        0.9995198845863342,
+        0.9999935626983643,
+        0.7430189251899719,
+        1
+      ],
+      "type": "VEC4"
+    },
+    {
+      "bufferView": 2,
+      "byteOffset": 0,
+      "componentType": 5126,
+      "normalized": false,
+      "count": 5950,
+      "min": [
+        0.0015930000226944685,
+        0.0007980000227689743
+      ],
+      "max": [
+        0.9795250296592712,
+        0.9980509877204895
+      ],
+      "type": "VEC2"
+    },
+    {
+      "bufferView": 3,
+      "byteOffset": 0,
+      "componentType": 5125,
+      "normalized": false,
+      "count": 33582,
+      "min": [
+        0
+      ],
+      "max": [
+        5949
+      ],
+      "type": "SCALAR"
+    }
+  ],
+  "scene": 0,
+  "scenes": [
+    {
+      "nodes": [
+        3
+      ],
+      "name": "Leggings"
+    }
+  ],
+  "nodes": [
+    {
+      "name": "defaultMaterial",
+      "extensions": {
+        "KHR_node_visibility": {
+          "visible": true
+        }
+      },
+      "mesh": 0
+    },
+    {
+      "name": "legeel5.002_legeel5.001",
+      "children": [
+        0
+      ],
+      "extensions": {
+        "KHR_node_visibility": {
+          "visible": true
+        }
+      }
+    },
+    {
+      "name": "Collada visual scene group",
+      "children": [
+        1
+      ],
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        3.422854177870249e-8,
+        0.9999999403953552,
+        0,
+        0,
+        -0.9999999403953552,
+        3.422854177870249e-8,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "extensions": {
+        "KHR_node_visibility": {
+          "visible": true
+        }
+      }
+    },
+    {
+      "name": "Sketchfab_model",
+      "children": [
+        2
+      ],
+      "matrix": [
+        1,
+        0,
+        0,
+        0,
+        0,
+        3.422854177870249e-8,
+        -0.9999999403953552,
+        0,
+        0,
+        0.9999999403953552,
+        3.422854177870249e-8,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "extensions": {
+        "KHR_node_visibility": {
+          "visible": true
+        }
+      }
+    }
+  ],
+  "meshes": [
+    {
+      "primitives": [
+        {
+          "material": 0,
+          "mode": 4,
+          "attributes": {
+            "NORMAL": 0,
+            "POSITION": 1,
+            "TANGENT": 2,
+            "TEXCOORD_0": 3
+          },
+          "indices": 4
+        }
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "name": "DefaultMaterial",
+      "pbrMetallicRoughness": {
+        "baseColorFactor": [
+          1,
+          1,
+          1,
+          1
+        ],
+        "metallicFactor": 1,
+        "roughnessFactor": 1
+      },
+      "emissiveFactor": [
+        0,
+        0,
+        0
+      ],
+      "alphaMode": "OPAQUE",
+      "doubleSided": true
+    }
+  ],
+  "extensionsUsed": [
+    "KHR_node_visibility"
+  ]
+}

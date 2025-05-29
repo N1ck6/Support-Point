@@ -680,7 +680,7 @@ function initProductItems() {
       image: "data/item (9).png",
       image2: "data/item1 (9).png",
       texture: "data/texture item (9).png",
-      model: "data/coat.gltf",
+      model: "data/Shorts.gltf",
     shortDesc: "Шорты для людей с протезами.",
     fullDesc: "Шорты из дышащего хлопка с боковыми молниями по всей длине. Позволяют легко снимать/надевать протез без раздевания. Усиленная область сидения.",
     features: [
@@ -698,7 +698,7 @@ function initProductItems() {
       image: "data/item (10).png",
       image2: "data/item1 (10).png",
       texture: "data/texture item (10).png",
-      model: "data/coat.gltf",
+      model: "data/Pants.gltf",
     shortDesc: "Брюки для людей с колостомой.",
     fullDesc: "Брюки из льняной ткани с эластичным поясом и скрытыми карманами для аксессуаров. Боковые швы смещены вперед для комфорта при сидении.",
     features: [
@@ -716,7 +716,7 @@ function initProductItems() {
       image: "data/item (11).png",
       image2: "data/item1 (11).png",
       texture: "data/texture item (11).png",
-      model: "data/coat.gltf",
+      model: "data/Pants.gltf",
     shortDesc: "Юбка для женщин с ограниченной подвижностью рук.",
     fullDesc: "Юбка-карандаш с магнитными застежками по бокам. Подкладка из шелковистого полиэстера предотвращает трение. Длина регулируется кнопками.",
     features: [
@@ -734,7 +734,7 @@ function initProductItems() {
       image: "data/item (12).png",
       image2: "data/item1 (12).png",
       texture: "data/texture item (12).png",
-      model: "data/coat.gltf",
+      model: "data/Shorts.gltf",
     shortDesc: "Капри для людей с мочевыми катетерами.",
     fullDesc: "Капри из стрейч-хлопка с внутренними карманами для мешков. Молнии на штанинах для быстрого доступа. Швы обработаны плоскими лентами.",
     features: [
@@ -773,7 +773,7 @@ function initProductItems() {
       image: "data/item (13).png",
       image2: "data/item1 (13).png",
       texture: "data/texture item (13).png",
-      model: "data/coat.gltf",
+      model: "data/Pants.gltf",
     shortDesc: "Штаны для людей с протезами ног.",
     fullDesc: "Утепленные штаны из мембранной ткани с молниями от пояса до щиколоток. Внутренняя подкладка из флиса. Усиленные колени и сиденье.",
     features: [
@@ -809,7 +809,7 @@ function initProductItems() {
       image: "data/item (15).png",
       image2: "data/item1 (15).png",
       texture: "data/texture item (15).png",
-      model: "data/coat.gltf",
+      model: "data/Pants.gltf",
     shortDesc: "Брюки с USB-подогревом для людей с нарушением кровообращения.",
     fullDesc: "Брюки из мягкого неопрена с встроенными нагревательными элементами. Управление через приложение. Удлиненная спинка и эластичные манжеты.",
     features: [
@@ -827,7 +827,7 @@ function initProductItems() {
       image: "data/item (16).png",
       image2: "data/item1 (16).png",
       texture: "data/texture item (16).png",
-      model: "data/coat.gltf",
+      model: "data/Leggings.gltf",
     shortDesc: "Лосины для людей с артрозом.",
     fullDesc: "Лосины из плотного хлопка с усиленными коленями и эластичным поясом. Внутренние карманы для согревающих пластин. Швы вынесены на внешнюю сторону.",
     features: [
@@ -1439,3 +1439,12 @@ function initSmoothScrolling() {
     });
   });
 }
+
+window.addEventListener("load", () => {
+    setTimeout(() => {
+    document.querySelector(".loader").style.opacity = "0";
+        setTimeout(() => {
+            document.querySelector(".loader").remove();
+        }, 500);
+    }, 3500);
+});

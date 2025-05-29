@@ -1,4 +1,3 @@
-/* Base Styles */
 :root {
   --primary-color: #b6c9d6;
   --secondary-color: #f6e6e4;
@@ -92,13 +91,12 @@ img {
   transform: translateY(-2px);
 }
 
-/* Header and Navigation Styles */
 header {
   background-color: white;
   box-shadow: var(--shadow);
   position: sticky;
   top: 0;
-  z-index: 1000;
+  z-index: 998;
   padding: 15px 0;
 }
 
@@ -149,7 +147,6 @@ nav ul li {
   width: 100%;
 }
 
-/* Cart Icon Styles */
 .cart-icon {
   position: relative;
   cursor: pointer;
@@ -173,7 +170,6 @@ nav ul li {
   font-weight: bold;
 }
 
-/* Notification System */
 .notification-container {
   position: fixed;
   top: 20px;
@@ -213,7 +209,6 @@ nav ul li {
   border-left: 4px solid #4299e1;
 }
 
-/* Main Section Styles */
 .main-section {
   padding: 5% 0;
   background-color: var(--secondary-color);
@@ -240,7 +235,6 @@ nav ul li {
   color: var(--accent-color);
 }
 
-/* Horizontal Image Scroller */
 .image-scroller-container {
   flex: 1;
   min-width: 300px;
@@ -272,7 +266,6 @@ nav ul li {
   box-shadow: var(--shadow);
 }
 
-/* About Section Styles */
 .about-section {
   padding: 80px 0;
   background-color: white;
@@ -372,7 +365,6 @@ nav ul li {
   background-color: var(--accent-color);
 }
 
-/* Items Section Styles */
 .items-section {
   padding: 80px 0;
   background-color: var(--light-color);
@@ -448,7 +440,6 @@ nav ul li {
   margin-top: 3rem;
 }
 
-/* Modal Styles */
 .modal {
   display: none;
   position: fixed;
@@ -606,7 +597,6 @@ nav ul li {
   background-color: #8090a0;
 }
 
-/* 3D View Styles */
 .threed-container {
   position: relative;
   width: 100%;
@@ -616,7 +606,6 @@ nav ul li {
   display: none;
 }
 
-/* Add loading indicator */
 .threed-container::before {
   content: 'Загрузка модели...';
   position: absolute;
@@ -634,7 +623,6 @@ nav ul li {
   z-index: 1;
 }
 
-/* Hide loading indicator when model is loaded */
 .threed-container.show::before {
   display: none;
 }
@@ -672,7 +660,6 @@ nav ul li {
   display: block;
 }
 
-/* Cart Modal Styles */
 .cart-modal .modal-content {
   max-width: 700px;
 }
@@ -793,7 +780,6 @@ nav ul li {
   font-size: 1.1rem;
 }
 
-/* File Drop Zone Styles */
 .drop-zone {
   border: 2px dashed var(--primary-color);
   border-radius: 5px;
@@ -807,11 +793,10 @@ nav ul li {
   background-color: rgba(182, 201, 214, 0.1);
 }
 
-/* Footer Styles */
 footer {
   background-color: var(--primary-color);
   color: var(--dark-color);
-  padding: 60px 0 20px;
+  padding: 20px 0;
 }
 
 .footer-content {
@@ -837,7 +822,7 @@ footer {
 }
 
 .links ul li {
-  margin-bottom: 0.7rem;
+  margin-bottom: 0.2rem;
 }
 
 .links ul li a:hover {
@@ -878,7 +863,6 @@ footer {
   border-top: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* Animations */
 @keyframes fade {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -897,7 +881,6 @@ footer {
   animation: slideUp 1s ease;
 }
 
-/* User Design Gallery Styles */
 .user-designs {
   margin-top: 40px;
 }
@@ -952,7 +935,6 @@ footer {
   font-weight: 600;
 }
 
-/* Responsive Styles */
 @media (max-width: 768px) {
   header .container {
     flex-direction: column;
@@ -992,7 +974,7 @@ footer {
   
   .footer-content {
     flex-direction: column;
-    gap: 30px;
+    gap: 10px;
   }
 }
 
@@ -1038,3 +1020,147 @@ footer {
     justify-content: flex-start;
   }
 }
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    transition: opacity 0.5s;
+    z-index: 999;
+}
+
+.TshirtContainer {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.scissors {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    z-index: 3;
+    opacity: 0;
+    animation: showS 0.15s forwards,
+        cutOne 1s 0.1s forwards,
+        hideS 0.15s 1s forwards,
+        showS 0.15s 1.4s forwards,
+        cutTwo 1s 1.4s forwards,
+        hideS 0.15s 2s forwards;
+
+}
+
+.dashed-line {
+    position: absolute;
+    height: 5px;
+    border-bottom: 3px dashed #000;
+    opacity: 0;
+    z-index: 2;
+}
+
+.left-line {
+    top: 130px;
+    right: 75px;
+    transform: rotate(-45deg);
+    animation: drawLine 0.6s 1.4s linear forwards,
+    resetLine 0.15s 2s forwards;
+    transform-origin: center right;
+}
+
+.right-line {
+    top: 105px;
+    left: 90px;
+    transform: rotate(45deg);
+    animation: drawLine 0.6s 0.1s linear forwards,
+    resetLine 0.15s 1s forwards;
+    transform-origin: center left;
+}
+
+.left-sleeve {
+    animation: hideS 0.5s 2s forwards;
+}
+
+.right-sleeve {
+    animation: hideS 0.5s 1s forwards;
+}
+
+.texture {
+    opacity: 0;
+    animation: revealTexture 0.5s 2.2s forwards;
+}
+
+.support-text {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    opacity: 0;
+    z-index: 4;
+    animation: showText 0.8s 2.2s forwards;
+}
+
+.support-text span {
+    display: inline-block;
+    opacity: 0;
+    font-size: 3em;
+    font-family: 'Lobster', cursive;
+    color: rgb(41, 81, 168);
+    font-weight: bold;
+    transform: translateY(10px);
+    padding-left: 1px;
+    padding-right: 1px;
+}
+
+@keyframes showLetter {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes revealTexture {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@keyframes moveRight {
+    0% { top: 100px; left: 180px; }
+    100% { top: 120px; left: 140px; }}
+@keyframes moveLeft {
+    0% { top: 120px; right: -40px; }
+    100% { top: 140px; right: 140px; }}
+@keyframes drawLine {
+    0% { width: 0; opacity: 1; }
+    100% { width: 60px; opacity: 1; }}
+@keyframes resetLine {
+    100% { width: 0; opacity: 0; }}
+@keyframes hideS {0% { opacity: 1; }
+    100% { opacity: 0; }}
+@keyframes showS {0% { opacity: 0; }
+    100% { opacity: 1; }}
+@keyframes cutOne {
+    0% { rotate: -45deg; top: 85px; left: 62px; }
+    100% { rotate: -45deg; top: 145px; left: 120px; }}
+@keyframes cutTwo {
+    0% {  rotate: 45deg; top: 110px; left: 310px; }
+    100% {  rotate: 45deg; top: 165px; left: 255px; }}
+@keyframes showText {
+    0% { opacity: 0; }
+    100% { opacity: 1; }}
+.support-text span:nth-child(1) { animation: showLetter 0.1s 2.2s forwards; }
+.support-text span:nth-child(2) { animation: showLetter 0.1s 2.3s forwards; }
+.support-text span:nth-child(3) { animation: showLetter 0.1s 2.4s forwards; }
+.support-text span:nth-child(4) { animation: showLetter 0.1s 2.5s forwards; }
+.support-text span:nth-child(5) { animation: showLetter 0.1s 2.6s forwards; }
+.support-text span:nth-child(6) { animation: showLetter 0.1s 2.7s forwards; }
+.support-text span:nth-child(7) { animation: showLetter 0.1s 2.8s forwards; }
+.support-text span:nth-child(8) { animation: showLetter 0.1s 2.9s forwards; }
+.support-text span:nth-child(9) { animation: showLetter 0.1s 3.0s forwards; }
+.support-text span:nth-child(10) { animation: showLetter 0.1s 3.1s forwards; }
