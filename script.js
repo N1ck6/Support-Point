@@ -9,8 +9,6 @@ document.addEventListener('DOMContentLoaded', function() {
   loadUserDesigns();
 });
 
-// Notification System
-
 function showNotification(message, type = 'info') {
   const notificationContainer = document.querySelector('.notification-container');
   
@@ -19,13 +17,9 @@ function showNotification(message, type = 'info') {
   notification.textContent = message;
   
   notificationContainer.appendChild(notification);
-  
-  // Trigger animation
   setTimeout(() => {
     notification.classList.add('show');
   }, 10);
-  
-  // Auto remove after 2 seconds
   setTimeout(() => {
     notification.classList.remove('show');
     setTimeout(() => {
@@ -34,13 +28,10 @@ function showNotification(message, type = 'info') {
   }, 2000);
 }
 
-// Cart System
 function initCart() {
-  // Load cart from localStorage
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
   updateCartCounter(cart.length);
   
-  // Cart icon click event
   const cartIcon = document.getElementById('cart-icon');
   const cartModal = document.getElementById('cart-modal');
   const closeCartModal = cartModal.querySelector('.close-modal');
@@ -71,6 +62,7 @@ function initCart() {
   
   const checkoutBtn = document.querySelector('.checkout-btn');
   checkoutBtn.addEventListener('click', () => {
+    cart = JSON.parse(localStorage.getItem('cart')) || [];
     if (cart.length > 0) {
       cart = [];
       saveCart(cart);
@@ -90,7 +82,6 @@ function updateCartCounter(count) {
   const cartCounter = document.querySelector('.cart-counter');
   cartCounter.textContent = count;
   
-  // Hide counter if cart is empty
   if (count === 0) {
     cartCounter.style.display = 'none';
   } else {
@@ -101,17 +92,14 @@ function updateCartCounter(count) {
 function addToCart(product) {
   let cart = JSON.parse(localStorage.getItem('cart')) || [];
   
-  // Check if product already in cart
   const existingProductIndex = cart.findIndex(item => 
     item.id === product.id && 
     JSON.stringify(item.customTexture) === JSON.stringify(product.customTexture)
   );
   
   if (existingProductIndex !== -1) {
-    // Increment quantity
     cart[existingProductIndex].quantity += 1;
   } else {
-    // Add new product
     product.quantity = 1;
     cart.push(product);
   }
@@ -127,7 +115,6 @@ function updateCartView() {
   const cartTotal = document.querySelector('.cart-total');
   const checkoutBtn = document.querySelector('.checkout-btn');
   
-  // Clear current items
   cartItemsContainer.innerHTML = '';
   
   if (cart.length === 0) {
@@ -149,10 +136,8 @@ function updateCartView() {
     const cartItemElement = document.createElement('div');
     cartItemElement.classList.add('cart-item');
     
-    // Determine image source
     let imgSrc = item.image;
     if (item.customTexture) {
-      // For custom items, use the angle view with applied texture
       imgSrc = item.customTexture.previewImage || item.image;
     }
     
@@ -177,11 +162,8 @@ function updateCartView() {
     
     cartItemsContainer.appendChild(cartItemElement);
   });
-  
-  // Update total price
   cartTotal.textContent = `Итого: ${totalPrice}Р`;
   
-  // Add event listeners to quantity and remove buttons
   document.querySelectorAll('.quantity-btn.decrease').forEach(btn => {
     btn.addEventListener('click', (e) => {
       const index = e.target.dataset.index;
@@ -579,8 +561,8 @@ function initProductItems() {
       id: 6,
       name: "Создайте свой собственный дизайн",
       price: "5999Р",
-      image: "data/item (5).jpg",
-      texture: "data/texture gray.jpg",
+      image: "data/custom_clothes.png",
+      texture: "data/texture basic.jpg",
       model: "data/coat.gltf",
       shortDesc: "Разработайте свою уникальную одежду с помощью нашего 3D конфигуратора.",
       fullDesc: "Наш уникальный 3D конфигуратор позволяет вам создать индивидуальный дизайн одежды. Загрузите свое изображение или фотографию, и мы применим ее в качестве текстуры к вашей одежде. Создайте что-то уникальное, что отражает вашу индивидуальность.",
@@ -654,8 +636,8 @@ function initProductItems() {
     id: 6,
     name: "Создайте свой собственный дизайн",
     price: "5999Р",
-    image: "data/item (5).jpg",
-    texture: "data/texture gray.jpg",
+    image: "data/custom_clothes.png",
+    texture: "data/texture basic.jpg",
     model: "data/coat.gltf",
     shortDesc: "Разработайте свою уникальную одежду с помощью нашего 3D конфигуратора.",
     fullDesc: "Наш уникальный 3D конфигуратор позволяет вам создать индивидуальный дизайн одежды. Загрузите свое изображение или фотографию, и мы применим ее в качестве текстуры к вашей одежде. Создайте что-то уникальное, что отражает вашу индивидуальность.",
@@ -747,9 +729,9 @@ function initProductItems() {
     id: 5,
     name: "Создайте свой собственный дизайн",
     price: "5999Р",
-    image: "data/item (5).jpg",
-    texture: "data/texture gray.jpg",
-    model: "data/coat.gltf",
+    image: "data/custom_clothes.png",
+    texture: "data/texture basic.jpg",
+    model: "data/Pants.gltf",
     shortDesc: "Разработайте свою уникальную одежду с помощью нашего 3D конфигуратора.",
     fullDesc: "Наш уникальный 3D конфигуратор позволяет вам создать индивидуальный дизайн одежды. Загрузите свое изображение или фотографию, и мы применим ее в качестве текстуры к вашей одежде. Создайте что-то уникальное, что отражает вашу индивидуальность.",
     features: [
@@ -840,9 +822,9 @@ function initProductItems() {
     id: 5,
     name: "Создайте свой собственный дизайн",
     price: "5999Р",
-    image: "data/item (5).jpg",
-    texture: "data/texture gray.jpg",
-    model: "data/coat.gltf",
+    image: "data/custom_clothes.png",
+    texture: "data/texture basic.jpg",
+    model: "data/Pants.gltf",
     shortDesc: "Разработайте свою уникальную одежду с помощью нашего 3D конфигуратора.",
     fullDesc: "Наш уникальный 3D конфигуратор позволяет вам создать индивидуальный дизайн одежды. Загрузите свое изображение или фотографию, и мы применим ее в качестве текстуры к вашей одежде. Создайте что-то уникальное, что отражает вашу индивидуальность.",
     features: [
@@ -926,7 +908,7 @@ function initProductItems() {
     modal.style.display = 'flex';
     setTimeout(() => {
       modal.classList.add('show');
-    }, 10);
+    }, 100);
   }
 
   function showRegularProduct(product) {
@@ -944,7 +926,6 @@ function initProductItems() {
           ` : ''}
         </div>
         <div class="threed-container" id="threed-view-container">
-          <!-- 3D view will be inserted here by JavaScript -->
         </div>
       </div>
       <div class="modal-details">
@@ -964,7 +945,6 @@ function initProductItems() {
       </div>
     `;
     
-    // Set up gallery navigation if second image exists
     if (hasSecondImage) {
       const galleryImg = document.getElementById('product-gallery-img');
       const prevArrow = document.querySelector('.gallery-prev');
@@ -984,24 +964,19 @@ function initProductItems() {
       });
     }
     
-    // Set up 3D view button
     const view3DBtn = document.querySelector('.view-3d');
     const imageGallery = document.querySelector('.image-gallery');
     const threedContainer = document.getElementById('threed-view-container');
     
     view3DBtn.addEventListener('click', () => {
       if (view3DBtn.classList.contains('active')) {
-        // Switch back to image gallery
         view3DBtn.classList.remove('active');
         threedContainer.classList.remove('show');
         imageGallery.style.display = 'block';
       } else {
-        // Switch to 3D view
         view3DBtn.classList.add('active');
         imageGallery.style.display = 'none';
         threedContainer.classList.add('show');
-        
-        // Initialize 3D viewer if not already initialized
         setTimeout(() => {
           if (!threedContainer.children.length) {
             init3DViewer(threedContainer, product, false);
@@ -1010,18 +985,15 @@ function initProductItems() {
       }
     });
     
-    // Add to cart button
     const addToCartBtn = document.querySelector('.add-to-cart');
     addToCartBtn.addEventListener('click', () => {
       addToCart(product);
     });
   }
-
   function show3DCustomizableProduct(product) {
     modalBody.innerHTML = `
       <div class="modal-image">
         <div class="threed-container show" id="threed-view-container">
-          <!-- 3D view will be inserted here by JavaScript -->
         </div>
         <div class="drop-zone" id="texture-drop-zone">
           <p>Перетащите изображение сюда или нажмите для выбора файла</p>
@@ -1035,46 +1007,214 @@ function initProductItems() {
         
         <div class="product-features">
           <h4>Особенности:</h4>
-          <ul>
-            ${product.features.map(feature => `<li>${feature}</li>`).join('')}
-          </ul>
+          <div class="customization-section">
+        <!-- Тип застежки -->
+        <div class="category">
+            <div class="category-header">
+                <h3 class="category-title">Тип застежки</h3>
+                <svg class="arrow" viewBox="0 0 24 24">
+                    <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/>
+                </svg>
+            </div>
+            <div class="options-container">
+                <div class="options-grid">
+                    <div class="option-item">
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="checkbox-input">
+                            <span class="checkbox-custom"></span>
+                            <span class="option-label">Магнитные застежки</span>
+                        </label>
+                    </div>
+                    <div class="option-item">
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="checkbox-input">
+                            <span class="checkbox-custom"></span>
+                            <span class="option-label">Крупные кнопки</span>
+                        </label>
+                    </div>
+                    <div class="option-item">
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="checkbox-input">
+                            <span class="checkbox-custom"></span>
+                            <span class="option-label">Липучки Velcro</span>
+                        </label>
+                    </div>
+                    <div class="option-item">
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="checkbox-input">
+                            <span class="checkbox-custom"></span>
+                            <span class="option-label">Молнии с бегунками</span>
+                        </label>
+                    </div>
+                    <div class="option-item">
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="checkbox-input">
+                            <span class="checkbox-custom"></span>
+                            <span class="option-label">Эластичные завязки</span>
+                        </label>
+                    </div>
+                    <div class="option-item">
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="checkbox-input">
+                            <span class="checkbox-custom"></span>
+                            <span class="option-label">Застежки для одной руки</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Тип ткани -->
+        <div class="category">
+            <div class="category-header">
+                <h3 class="category-title">Тип ткани</h3>
+                <svg class="arrow" viewBox="0 0 24 24">
+                    <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/>
+                </svg>
+            </div>
+            <div class="options-container">
+                <div class="options-grid">
+                    <div class="option-item">
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="checkbox-input">
+                            <span class="checkbox-custom"></span>
+                            <span class="option-label">Органический хлопок</span>
+                        </label>
+                    </div>
+                    <div class="option-item">
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="checkbox-input">
+                            <span class="checkbox-custom"></span>
+                            <span class="option-label">Бамбуковое волокно</span>
+                        </label>
+                    </div>
+                    <div class="option-item">
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="checkbox-input">
+                            <span class="checkbox-custom"></span>
+                            <span class="option-label">Мягкий лен</span>
+                        </label>
+                    </div>
+                    <div class="option-item">
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="checkbox-input">
+                            <span class="checkbox-custom"></span>
+                            <span class="option-label">Гипоаллергенный полиэстер</span>
+                        </label>
+                    </div>
+                    <div class="option-item">
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="checkbox-input">
+                            <span class="checkbox-custom"></span>
+                            <span class="option-label">Бесшовные материалы</span>
+                        </label>
+                    </div>
+                    <div class="option-item">
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="checkbox-input">
+                            <span class="checkbox-custom"></span>
+                            <span class="option-label">Ткань с UPF-защитой</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Адаптивные элементы -->
+        <div class="category">
+            <div class="category-header">
+                <h3 class="category-title">Адаптивные элементы</h3>
+                <svg class="arrow" viewBox="0 0 24 24">
+                    <path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z"/>
+                </svg>
+            </div>
+            <div class="options-container">
+                <div class="options-grid">
+                    <div class="option-item">
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="checkbox-input">
+                            <span class="checkbox-custom"></span>
+                            <span class="option-label">Удлиненная спинка</span>
+                        </label>
+                    </div>
+                    <div class="option-item">
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="checkbox-input">
+                            <span class="checkbox-custom"></span>
+                            <span class="option-label">Регулируемые манжеты</span>
+                        </label>
+                    </div>
+                    <div class="option-item">
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="checkbox-input">
+                            <span class="checkbox-custom"></span>
+                            <span class="option-label">Съемные подкладки</span>
+                        </label>
+                    </div>
+                    <div class="option-item">
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="checkbox-input">
+                            <span class="checkbox-custom"></span>
+                            <span class="option-label">Усиленные колени/локти</span>
+                        </label>
+                    </div>
+                    <div class="option-item">
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="checkbox-input">
+                            <span class="checkbox-custom"></span>
+                            <span class="option-label">Доступные карманы</span>
+                        </label>
+                    </div>
+                    <div class="option-item">
+                        <label class="checkbox-container">
+                            <input type="checkbox" class="checkbox-input">
+                            <span class="checkbox-custom"></span>
+                            <span class="option-label">Открывающиеся швы</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
         </div>
         
         <button class="btn modal-btn add-to-cart">В корзину</button>
         <button class="btn modal-btn save-design">Сохранить дизайн</button>
       </div>
     `;
-    
-    // Initialize 3D viewer
+    document.querySelectorAll('.category-header').forEach(header => {
+      header.addEventListener('click', () => {
+        const category = header.parentElement;
+        category.classList.toggle('active');
+      });
+    });
+
     const threedContainer = document.getElementById('threed-view-container');
-    const uploadedTexture = init3DViewer(threedContainer, product, true);
+    setTimeout(() => {
+      ownTexture = init3DViewer(threedContainer, product, true);
+    }, 100);
     
-    // Set up file drop zone
     const dropZone = document.getElementById('texture-drop-zone');
     const fileInput = document.getElementById('texture-upload');
+    threedContainer.classList.add('show');
     
     dropZone.addEventListener('click', () => {
       fileInput.click();
     });
-    
     dropZone.addEventListener('dragover', (e) => {
       e.preventDefault();
       dropZone.classList.add('active');
     });
-    
     dropZone.addEventListener('dragleave', () => {
       dropZone.classList.remove('active');
     });
-    
     dropZone.addEventListener('drop', (e) => {
       e.preventDefault();
       dropZone.classList.remove('active');
-      
       if (e.dataTransfer.files.length > 0) {
         handleFileUpload(e.dataTransfer.files[0]);
       }
     });
-    
     fileInput.addEventListener('change', (e) => {
       if (e.target.files.length > 0) {
         handleFileUpload(e.target.files[0]);
@@ -1082,36 +1222,45 @@ function initProductItems() {
     });
     
     function handleFileUpload(file) {
-      // Check file size (max 20MB)
       if (file.size > 20 * 1024 * 1024) {
         showNotification('Файл слишком большой. Максимальный размер 20МБ.', 'error');
         return;
       }
-      
-      // Check if it's an image
+
       if (!file.type.startsWith('image/')) {
         showNotification('Пожалуйста, загрузите файл изображения.', 'error');
         return;
       }
-      
+
       const reader = new FileReader();
       reader.onload = function(e) {
         const img = new Image();
         img.onload = function() {
-          uploadedTexture.image = img;
-          uploadedTexture.needsUpdate = true;
-          
+          const newTexture = new THREE.Texture(img);
+          newTexture.wrapS = THREE.RepeatWrapping;
+          newTexture.wrapT = THREE.RepeatWrapping;
+          newTexture.minFilter = THREE.LinearFilter;
+          newTexture.magFilter = THREE.LinearFilter;
+          newTexture.needsUpdate = true;
+          ownTexture.setTexture(newTexture);
+
           product.customTexture = {
             dataUrl: e.target.result,
             previewImage: e.target.result
           };
-          
+
           showNotification('Текстура успешно применена!', 'success');
+          const dropZone = document.getElementById('texture-drop-zone');
+          dropZone.style.display = "none";
         };
         img.src = e.target.result;
       };
+      reader.onerror = function(e) {
+        showNotification('Ошибка при чтении файла.', 'error');
+      };
       reader.readAsDataURL(file);
     }
+    
     
     const addToCartBtn = document.querySelector('.add-to-cart');
     addToCartBtn.addEventListener('click', () => {
@@ -1128,20 +1277,23 @@ function initProductItems() {
         showNotification('Пожалуйста, загрузите изображение перед сохранением дизайна.', 'error');
         return;
       }
-      
-      // Generate unique ID for the design
-      const designId = Date.now();
-      const designName = `Дизайн #${designId}`;
+      var date = new Date();
+      const designId = date.toLocaleDateString();
+      const designName = `Дизайн ${designId}`;
+      toggledFeatures = getSelectedFeatures();
+      if (toggledFeatures.length == 0) toggledFeatures = ['Особенности дезайна не выбраны'];
       
       const customProduct = {
         id: `custom-${designId}`,
         name: designName,
         price: product.price,
         image: product.customTexture.previewImage,
+        texture: product.customTexture.previewImage,
+        customTexture: product.customTexture,
+        model: product.model,
         shortDesc: "Ваш персональный дизайн",
         fullDesc: "Персонализированная одежда с вашим собственным дизайном.",
-        features: product.features,
-        customTexture: product.customTexture,
+        features: toggledFeatures,
         is3DCustomizable: true
       };
       
@@ -1151,7 +1303,8 @@ function initProductItems() {
     });
   }
 }
-  
+
+let ownTexture;
 function init3DViewer(container, product, isCustomizable) {
   const scene = new THREE.Scene();
   scene.background = new THREE.Color(0xf8f9fa);
@@ -1189,7 +1342,6 @@ function init3DViewer(container, product, isCustomizable) {
         }
       });
       
-      // Scale and position model
       model.scale.set(2, 2, 2);
       if (product.model == "data/coat.gltf") model.position.set(0, -8, 0);
       else if (product.model == "data/Shirt.gltf") model.position.set(0, -6, 0);
@@ -1219,14 +1371,12 @@ function init3DViewer(container, product, isCustomizable) {
   controls.enableDamping = true;
   controls.dampingFactor = 0.05;
 
-  // Animation loop
   function animate() {
     requestAnimationFrame(animate);
     controls.update();
     renderer.render(scene, camera);
   }
   
-  // Handle window resize
   window.addEventListener('resize', () => {
     if (container.clientWidth > 0 && container.clientHeight > 0) {
       camera.aspect = container.clientWidth / container.clientHeight;
@@ -1236,23 +1386,20 @@ function init3DViewer(container, product, isCustomizable) {
   });
   
   if (isCustomizable) {
-    const textureSetter = {
+    return {
       setTexture: (newTexture) => {
+        ownTexture = newTexture;
         if (model) {
           model.traverse((child) => {
             if (child.isMesh) {
-              child.material.map = newTexture;
+              child.material.map = ownTexture;
               child.material.needsUpdate = true;
             }
           });
         }
-      }
+      },
+      texture: ownTexture
     };
-    
-    const defaultTexture = createDefaultTexture();
-    textureSetter.setTexture(defaultTexture);
-    
-    return textureSetter;
   }
 }
 
@@ -1268,7 +1415,6 @@ function createDefaultTexture() {
   ctx.fillStyle = gradient;
   ctx.fillRect(0, 0, 512, 512);
   
-  // Add pattern
   ctx.strokeStyle = '#a0b8d8';
   ctx.lineWidth = 2;
   for (let i = 50; i < 512; i += 100) {
@@ -1286,7 +1432,6 @@ function createDefaultTexture() {
   return defaultTexture;
 }
 
-// User Design Storage and Display
 function saveUserDesign(designProduct) {
   let designs = JSON.parse(localStorage.getItem('userDesigns')) || [];
   designs.push(designProduct);
@@ -1297,17 +1442,11 @@ function saveUserDesign(designProduct) {
 function loadUserDesigns() {
   const designs = JSON.parse(localStorage.getItem('userDesigns')) || [];
   const designsGrid = document.querySelector('.user-designs-grid');
-  
-  // Clear the grid
   designsGrid.innerHTML = '';
-  
-  // Hide the section if no designs
   const userDesignsSection = document.querySelector('.user-designs');
   userDesignsSection.style.display = designs.length > 0 ? 'block' : 'none';
   
   if (designs.length === 0) return;
-  
-  // Add each design to the grid
   designs.forEach(design => {
     const card = document.createElement('div');
     card.classList.add('design-card');
@@ -1329,7 +1468,6 @@ function loadUserDesigns() {
       modalBody.innerHTML = `
         <div class="modal-image">
           <div class="threed-container show" id="threed-view-container">
-            <!-- 3D view will be inserted here by JavaScript -->
           </div>
         </div>
         <div class="modal-details">
@@ -1348,11 +1486,11 @@ function loadUserDesigns() {
         </div>
       `;
       
-      // Initialize 3D viewer with saved texture
       const threedContainer = document.getElementById('threed-view-container');
-      init3DViewer(threedContainer, design, false);
+      setTimeout(() => {
+        init3DViewer(threedContainer, design, false);
+      }, 100);
       
-      // Add to cart functionality
       const addToCartBtn = document.querySelector('.add-saved-to-cart');
       addToCartBtn.addEventListener('click', () => {
         addToCart(design);
@@ -1428,5 +1566,14 @@ window.addEventListener("load", () => {
         setTimeout(() => {
             document.querySelector(".loader").remove();
         }, 500);
-    }, 100);
+    }, 3200);
 });
+
+function getSelectedFeatures() {
+  const features = [];
+  document.querySelectorAll('.checkbox-input:checked').forEach(checkbox => {
+    const label = checkbox.closest('.checkbox-container').querySelector('.option-label').textContent;
+    features.push(label);
+  });
+  return features;
+}
