@@ -1,39 +1,39 @@
 {
   "asset": {
     "extras": {
-      "author": "Mckai (https://sketchfab.com/Mckai)",
+      "author": "danush55 (https://sketchfab.com/danush55)",
       "license": "CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)",
-      "source": "https://sketchfab.com/3d-models/orange-puff-shorts-f6bca89e7a49466daad36b259fbe0772",
-      "title": "Orange Puff Shorts"
+      "source": "https://sketchfab.com/3d-models/leather-vest-05caa242ef1748d9b7421ad6c7d19c6f",
+      "title": "Leather Vest"
     },
-    "generator": "Sketchfab-12.68.0",
+    "generator": "Sketchfab-16.65.0",
     "version": "2.0"
   },
   "buffers": [
     {
-      "uri": "Shorts.bin",
-      "byteLength": 241648
+      "uri": "Vest.bin",
+      "byteLength": 276856
     }
   ],
   "bufferViews": [
     {
       "buffer": 0,
       "byteOffset": 0,
-      "byteLength": 97728,
+      "byteLength": 114504,
       "byteStride": 24,
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteOffset": 97728,
-      "byteLength": 65152,
+      "byteOffset": 114504,
+      "byteLength": 76336,
       "byteStride": 16,
       "target": 34962
     },
     {
       "buffer": 0,
-      "byteOffset": 162880,
-      "byteLength": 78768,
+      "byteOffset": 190840,
+      "byteLength": 86016,
       "target": 34963
     }
   ],
@@ -43,16 +43,16 @@
       "byteOffset": 0,
       "componentType": 5126,
       "normalized": false,
-      "count": 4072,
+      "count": 4771,
       "min": [
-        -0.9999487400054932,
-        -0.9607725739479065,
-        -0.9995546340942383
+        -0.9998907446861267,
+        -0.9999235272407532,
+        -0.999330461025238
       ],
       "max": [
-        0.9998267889022827,
-        0.8943600654602051,
-        0.9998807907104492
+        0.999928891658783,
+        0.9999774098396301,
+        0.9952452778816223
       ],
       "type": "VEC3"
     },
@@ -61,16 +61,16 @@
       "byteOffset": 12,
       "componentType": 5126,
       "normalized": false,
-      "count": 4072,
+      "count": 4771,
       "min": [
-        -0.1498466432094574,
-        0.6974805593490601,
-        -0.069217748939991
+        -0.23091605305671692,
+        -0.17019306123256683,
+        0.8298563361167908
       ],
       "max": [
-        0.16364766657352448,
-        1.070879578590393,
-        0.1163056343793869
+        0.2309885323047638,
+        0.1833350658416748,
+        1.6229641437530518
       ],
       "type": "VEC3"
     },
@@ -79,14 +79,14 @@
       "byteOffset": 0,
       "componentType": 5126,
       "normalized": false,
-      "count": 4072,
+      "count": 4771,
       "min": [
-        0.0011632442474365234,
-        0
+        0.005799999926239252,
+        0.002400000113993883
       ],
       "max": [
-        0.999031126499176,
-        0.9595779776573181
+        0.9923999905586243,
+        0.8482999801635742
       ],
       "type": "VEC2"
     },
@@ -95,14 +95,14 @@
       "byteOffset": 8,
       "componentType": 5126,
       "normalized": false,
-      "count": 4072,
+      "count": 4771,
       "min": [
-        0.0011632442474365234,
-        0
+        0.01625959202647209,
+        0.016259538009762764
       ],
       "max": [
-        0.999031126499176,
-        0.9595779776573181
+        0.980241060256958,
+        0.9837403297424316
       ],
       "type": "VEC2"
     },
@@ -111,12 +111,12 @@
       "byteOffset": 0,
       "componentType": 5125,
       "normalized": false,
-      "count": 19692,
+      "count": 21504,
       "min": [
         0
       ],
       "max": [
-        4071
+        4770
       ],
       "type": "SCALAR"
     }
@@ -125,34 +125,26 @@
   "scenes": [
     {
       "nodes": [
-        6
+        4
       ],
-      "name": "Shorts"
+      "name": "Vest"
     }
   ],
   "nodes": [
     {
-      "name": "AAA Pants edit_Tassle.001_0",
-      "extensions": {
-        "KHR_node_visibility": {
-          "visible": true
-        }
-      }
-    },
-    {
-      "name": "AAA Pants edit_Pants.001_0",
+      "name": "NEW VEST_Leather Base 01 Holes_0",
       "matrix": [
-        0.05000000074505806,
+        3,
         0,
         0,
         0,
         0,
-        0.05000000074505806,
+        3,
         0,
         0,
         0,
         0,
-        0.05000000074505806,
+        3,
         0,
         0,
         0,
@@ -167,19 +159,9 @@
       "mesh": 0
     },
     {
-      "name": "AAA Pants edit_Material.005_0",
-      "extensions": {
-        "KHR_node_visibility": {
-          "visible": true
-        }
-      }
-    },
-    {
-      "name": "AAA Pants edit",
+      "name": "NEW VEST",
       "children": [
-        0,
-        1,
-        2
+        0
       ],
       "matrix": [
         100,
@@ -187,12 +169,12 @@
         0,
         0,
         0,
-        100,
-        0.000004371138857095502,
+        -0.000013435885193757713,
+        -100,
         0,
         0,
-        -0.000004371138857095502,
         100,
+        -0.000013435885193757713,
         0,
         0,
         0,
@@ -208,7 +190,7 @@
     {
       "name": "RootNode",
       "children": [
-        3
+        1
       ],
       "extensions": {
         "KHR_node_visibility": {
@@ -217,22 +199,22 @@
       }
     },
     {
-      "name": "Pants.fbx",
+      "name": "cd679be492b74270bde4020df023c295.fbx",
       "children": [
-        4
+        2
       ],
       "matrix": [
-        1,
+        0.009999999776482582,
         0,
         0,
         0,
         0,
-        3.4228538225988814e-8,
-        0.9999998807907104,
+        3.42285422227917e-10,
+        0.009999999776482582,
         0,
         0,
-        -0.9999998807907104,
-        3.4228538225988814e-8,
+        -0.009999999776482582,
+        3.42285422227917e-10,
         0,
         0,
         0,
@@ -246,9 +228,9 @@
       }
     },
     {
-      "name": "Shorts",
+      "name": "Vest",
       "children": [
-        5
+        3
       ],
       "matrix": [
         1,
@@ -256,12 +238,12 @@
         0,
         0,
         0,
-        3.4228538225988814e-8,
-        -0.9999998807907104,
+        3.422854177870249e-8,
+        -0.9999999403953552,
         0,
         0,
-        0.9999998807907104,
-        3.4228538225988814e-8,
+        0.9999999403953552,
+        3.422854177870249e-8,
         0,
         0,
         0,
@@ -294,13 +276,16 @@
   ],
   "materials": [
     {
+      "name": "Leather_Base_01_Holes",
       "pbrMetallicRoughness": {
         "baseColorFactor": [
-          1,
-          1,
-          1,
+          0.8,
+          0.8,
+          0.8,
           1
-        ]
+        ],
+        "metallicFactor": 0,
+        "roughnessFactor": 0.8211145618000169
       },
       "emissiveFactor": [
         0,
@@ -310,15 +295,19 @@
       "alphaMode": "OPAQUE",
       "doubleSided": true,
       "extensions": {
-        "KHR_materials_unlit": {}
+        "KHR_materials_specular": {
+          "specularFactor": 1,
+          "specularColorFactor": [
+            1,
+            1,
+            1
+          ]
+        }
       }
     }
   ],
-  "extensionsRequired": [
-    "KHR_materials_unlit"
-  ],
   "extensionsUsed": [
     "KHR_node_visibility",
-    "KHR_materials_unlit"
+    "KHR_materials_specular"
   ]
 }

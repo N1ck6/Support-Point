@@ -144,6 +144,24 @@
   "nodes": [
     {
       "name": "defaultMaterial",
+      "matrix": [
+        1.5,
+        0,
+        0,
+        0,
+        0,
+        1.5,
+        0,
+        0,
+        0,
+        0,
+        1.5,
+        0,
+        0,
+        2.190627098083496,
+        0,
+        1
+      ],
       "extensions": {
         "KHR_node_visibility": {
           "visible": true
@@ -192,7 +210,7 @@
       }
     },
     {
-      "name": "Sketchfab_model",
+      "name": "Leggings",
       "children": [
         2
       ],

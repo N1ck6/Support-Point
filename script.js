@@ -69,11 +69,9 @@ function initCart() {
     }
   });
   
-  // Checkout button
   const checkoutBtn = document.querySelector('.checkout-btn');
   checkoutBtn.addEventListener('click', () => {
     if (cart.length > 0) {
-      // Clear cart and show thank you notification
       cart = [];
       saveCart(cart);
       updateCartCounter(0);
@@ -127,6 +125,7 @@ function updateCartView() {
   const cart = JSON.parse(localStorage.getItem('cart')) || [];
   const cartItemsContainer = document.querySelector('.cart-items');
   const cartTotal = document.querySelector('.cart-total');
+  const checkoutBtn = document.querySelector('.checkout-btn');
   
   // Clear current items
   cartItemsContainer.innerHTML = '';
@@ -140,7 +139,6 @@ function updateCartView() {
     cartTotal.textContent = 'Итого: 0Р';
     return;
   }
-  
   let totalPrice = 0;
   
   cart.forEach(item => {
@@ -604,7 +602,7 @@ function initProductItems() {
     price: "$129.99",
       image: "data/item (6).png",
       image2: "data/item1 (6).png",
-      texture: "data/texture item (6).png",
+      texture: "data/texture item (6).jpg",
       model: "data/coat.gltf",
     shortDesc: "Утепленная парка с магнитными застежками вместо пуговиц. Для людей с артритом.",
     fullDesc: "Парка из водоотталкивающей ткани с термоподкладкой. Магнитные застежки расположены вдоль всей длины, что позволяет легко одеваться одной рукой. Усиленные плечевые швы для ношения рюкзака.",
@@ -622,7 +620,7 @@ function initProductItems() {
     price: "$149.99",
       image: "data/item (7).png",
       image2: "data/item1 (7).png",
-      texture: "data/texture item (7).png",
+      texture: "data/texture item (7).jpg",
       model: "data/Shirt.gltf",
     shortDesc: "Куртка для колясочников с удлиненной спинкой.",
     fullDesc: "Куртка из мембранной ткани с удлиненной спинкой, предотвращающей задирание при сидении. Капюшон регулируется одной рукой. Внутренние карманы для лекарств.",
@@ -640,8 +638,8 @@ function initProductItems() {
     price: "$89.99",
       image: "data/item (8).png",
       image2: "data/item1 (8).png",
-      texture: "data/texture item (8).png",
-      model: "data/coat.gltf",
+      texture: "data/texture item (8).jpg",
+      model: "data/Vest.gltf",
     shortDesc: "Бесшовный жилет для людей с аутизмом.",
     fullDesc: "Жилет из мягкого хлопка без боковых швов. Магнитные застежки спереди. Карманы расположены на уровне груди для удобства доступа.",
     features: [
@@ -679,7 +677,7 @@ function initProductItems() {
     price: "$49.99",
       image: "data/item (9).png",
       image2: "data/item1 (9).png",
-      texture: "data/texture item (9).png",
+      texture: "data/texture item (9).jpg",
       model: "data/Shorts.gltf",
     shortDesc: "Шорты для людей с протезами.",
     fullDesc: "Шорты из дышащего хлопка с боковыми молниями по всей длине. Позволяют легко снимать/надевать протез без раздевания. Усиленная область сидения.",
@@ -697,7 +695,7 @@ function initProductItems() {
     price: "$59.99",
       image: "data/item (10).png",
       image2: "data/item1 (10).png",
-      texture: "data/texture item (10).png",
+      texture: "data/texture item (10).jpg",
       model: "data/Pants.gltf",
     shortDesc: "Брюки для людей с колостомой.",
     fullDesc: "Брюки из льняной ткани с эластичным поясом и скрытыми карманами для аксессуаров. Боковые швы смещены вперед для комфорта при сидении.",
@@ -715,8 +713,8 @@ function initProductItems() {
     price: "$54.99",
       image: "data/item (11).png",
       image2: "data/item1 (11).png",
-      texture: "data/texture item (11).png",
-      model: "data/Pants.gltf",
+      texture: "data/texture item (11).jpg",
+      model: "data/Skirt.gltf",
     shortDesc: "Юбка для женщин с ограниченной подвижностью рук.",
     fullDesc: "Юбка-карандаш с магнитными застежками по бокам. Подкладка из шелковистого полиэстера предотвращает трение. Длина регулируется кнопками.",
     features: [
@@ -733,7 +731,7 @@ function initProductItems() {
     price: "$69.99",
       image: "data/item (12).png",
       image2: "data/item1 (12).png",
-      texture: "data/texture item (12).png",
+      texture: "data/texture item (12).jpg",
       model: "data/Shorts.gltf",
     shortDesc: "Капри для людей с мочевыми катетерами.",
     fullDesc: "Капри из стрейч-хлопка с внутренними карманами для мешков. Молнии на штанинах для быстрого доступа. Швы обработаны плоскими лентами.",
@@ -772,7 +770,7 @@ function initProductItems() {
     price: "$99.99",
       image: "data/item (13).png",
       image2: "data/item1 (13).png",
-      texture: "data/texture item (13).png",
+      texture: "data/texture item (13).jpg",
       model: "data/Pants.gltf",
     shortDesc: "Штаны для людей с протезами ног.",
     fullDesc: "Утепленные штаны из мембранной ткани с молниями от пояса до щиколоток. Внутренняя подкладка из флиса. Усиленные колени и сиденье.",
@@ -790,7 +788,7 @@ function initProductItems() {
     price: "$44.99",
       image: "data/item (14).png",
       image2: "data/item1 (14).png",
-      texture: "data/texture item (14).png",
+      texture: "data/texture item (14).jpg",
       model: "data/Shirt.gltf",
     shortDesc: "Белье для людей с чувствительной кожей.",
     fullDesc: "Термобелье из мериносовой шерсти без боковых швов. Плоские этикетки и гипоаллергенные красители. Зона горловины с магнитной застежкой.",
@@ -808,7 +806,7 @@ function initProductItems() {
     price: "$199.99",
       image: "data/item (15).png",
       image2: "data/item1 (15).png",
-      texture: "data/texture item (15).png",
+      texture: "data/texture item (15).jpg",
       model: "data/Pants.gltf",
     shortDesc: "Брюки с USB-подогревом для людей с нарушением кровообращения.",
     fullDesc: "Брюки из мягкого неопрена с встроенными нагревательными элементами. Управление через приложение. Удлиненная спинка и эластичные манжеты.",
@@ -826,7 +824,7 @@ function initProductItems() {
     price: "$79.99",
       image: "data/item (16).png",
       image2: "data/item1 (16).png",
-      texture: "data/texture item (16).png",
+      texture: "data/texture item (16).jpg",
       model: "data/Leggings.gltf",
     shortDesc: "Лосины для людей с артрозом.",
     fullDesc: "Лосины из плотного хлопка с усиленными коленями и эластичным поясом. Внутренние карманы для согревающих пластин. Швы вынесены на внешнюю сторону.",
@@ -1100,14 +1098,12 @@ function initProductItems() {
       reader.onload = function(e) {
         const img = new Image();
         img.onload = function() {
-          // Apply texture to 3D model
           uploadedTexture.image = img;
           uploadedTexture.needsUpdate = true;
           
-          // Store texture data in product for cart
           product.customTexture = {
             dataUrl: e.target.result,
-            previewImage: e.target.result // Using the same image for preview
+            previewImage: e.target.result
           };
           
           showNotification('Текстура успешно применена!', 'success');
@@ -1117,7 +1113,6 @@ function initProductItems() {
       reader.readAsDataURL(file);
     }
     
-    // Add to cart button
     const addToCartBtn = document.querySelector('.add-to-cart');
     addToCartBtn.addEventListener('click', () => {
       if (!product.customTexture) {
@@ -1127,7 +1122,6 @@ function initProductItems() {
       addToCart(product);
     });
     
-    // Save design button
     const saveDesignBtn = document.querySelector('.save-design');
     saveDesignBtn.addEventListener('click', () => {
       if (!product.customTexture) {
@@ -1139,7 +1133,6 @@ function initProductItems() {
       const designId = Date.now();
       const designName = `Дизайн #${designId}`;
       
-      // Create new product object based on the custom design
       const customProduct = {
         id: `custom-${designId}`,
         name: designName,
@@ -1152,7 +1145,6 @@ function initProductItems() {
         is3DCustomizable: true
       };
       
-      // Save to localStorage
       saveUserDesign(customProduct);
       
       showNotification('Ваш дизайн сохранен!', 'success');
@@ -1160,22 +1152,17 @@ function initProductItems() {
   }
 }
   
-// Initialize 3D Model Viewer
 function init3DViewer(container, product, isCustomizable) {
-  // Set up scene
   const scene = new THREE.Scene();
   scene.background = new THREE.Color(0xf8f9fa);
   
-  // Set up camera
   const camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight || 1, 0.1, 1000);
   camera.position.set(0, 2, 6);
   
-  // Set up renderer
   const renderer = new THREE.WebGLRenderer({ antialias: true });
   renderer.setSize(container.clientWidth, container.clientHeight);
   container.appendChild(renderer.domElement);
   
-  // Set up lights
   const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
   scene.add(ambientLight);
   
@@ -1183,22 +1170,16 @@ function init3DViewer(container, product, isCustomizable) {
   directionalLight.position.set(5, 10, 7);
   scene.add(directionalLight);
   
-  // Load 3D model
   let model;
-
   const loader = new THREE.GLTFLoader();
   loader.load(
     product.model,
     (gltf) => {
       model = gltf.scene;
       
-      // Apply texture to all materials in the model
       model.traverse((child) => {
         if (child.isMesh) {
-          // Store original material for reset
           child.originalMaterial = child.material;
-          
-          // Create material with texture
           const texture = new THREE.TextureLoader().load(product.texture);
           child.material = new THREE.MeshStandardMaterial({
             map: texture,
@@ -1212,6 +1193,11 @@ function init3DViewer(container, product, isCustomizable) {
       model.scale.set(2, 2, 2);
       if (product.model == "data/coat.gltf") model.position.set(0, -8, 0);
       else if (product.model == "data/Shirt.gltf") model.position.set(0, -6, 0);
+      else if (product.model == "data/Shorts.gltf") model.position.set(0, -9, 0);
+      else if (product.model == "data/Pants.gltf") model.position.set(0, -3, 0);
+      else if (product.model == "data/Leggings.gltf") model.position.set(0, -5, 0);
+      else if (product.model == "data/Vest.gltf") model.position.set(0, -7, 0);
+      else if (product.model == "data/Skirt.gltf") model.position.set(0, 0, 0);
       scene.add(model);
       animate();
     },
@@ -1249,9 +1235,7 @@ function init3DViewer(container, product, isCustomizable) {
     }
   });
   
-  // Load default texture if this is customizable
   if (isCustomizable) {
-    // Return a texture setter for customization
     const textureSetter = {
       setTexture: (newTexture) => {
         if (model) {
@@ -1265,7 +1249,6 @@ function init3DViewer(container, product, isCustomizable) {
       }
     };
     
-    // Create default texture
     const defaultTexture = createDefaultTexture();
     textureSetter.setTexture(defaultTexture);
     
@@ -1279,7 +1262,6 @@ function createDefaultTexture() {
   canvas.height = 512;
   const ctx = canvas.getContext('2d');
   
-  // Create gradient background
   const gradient = ctx.createLinearGradient(0, 0, 512, 512);
   gradient.addColorStop(0, '#b6c9d6');
   gradient.addColorStop(1, '#d6e4f0');
@@ -1446,5 +1428,5 @@ window.addEventListener("load", () => {
         setTimeout(() => {
             document.querySelector(".loader").remove();
         }, 500);
-    }, 3500);
+    }, 100);
 });
