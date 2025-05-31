@@ -581,7 +581,7 @@ function initProductItems() {
     {
     id: 1,
     name: "Парка с магнитными застежками",
-    price: "$129.99",
+    price: "12999Р",
       image: "data/item (6).png",
       image2: "data/item1 (6).png",
       texture: "data/texture item (6).jpg",
@@ -599,7 +599,7 @@ function initProductItems() {
   {
     id: 2,
     name: "Утепленная куртка с регулируемым капюшоном",
-    price: "$149.99",
+    price: "14999Р",
       image: "data/item (7).png",
       image2: "data/item1 (7).png",
       texture: "data/texture item (7).jpg",
@@ -617,7 +617,7 @@ function initProductItems() {
   {
     id: 3,
     name: "Жилет с бесшовными боковыми швами",
-    price: "$89.99",
+    price: "8999Р",
       image: "data/item (8).png",
       image2: "data/item1 (8).png",
       texture: "data/texture item (8).jpg",
@@ -656,7 +656,7 @@ function initProductItems() {
     {
     id: 1,
     name: "Шорты с боковыми молниями",
-    price: "$49.99",
+    price: "4999Р",
       image: "data/item (9).png",
       image2: "data/item1 (9).png",
       texture: "data/texture item (9).jpg",
@@ -674,7 +674,7 @@ function initProductItems() {
   {
     id: 2,
     name: "Легкие брюки с эластичным поясом",
-    price: "$59.99",
+    price: "5999Р",
       image: "data/item (10).png",
       image2: "data/item1 (10).png",
       texture: "data/texture item (10).jpg",
@@ -692,7 +692,7 @@ function initProductItems() {
   {
     id: 3,
     name: "Юбка с магнитными застежками",
-    price: "$54.99",
+    price: "5499Р",
       image: "data/item (11).png",
       image2: "data/item1 (11).png",
       texture: "data/texture item (11).jpg",
@@ -710,7 +710,7 @@ function initProductItems() {
   {
     id: 4,
     name: "Капри с карманами для катетеров",
-    price: "$69.99",
+    price: "6999Р",
       image: "data/item (12).png",
       image2: "data/item1 (12).png",
       texture: "data/texture item (12).jpg",
@@ -749,7 +749,7 @@ function initProductItems() {
     {
     id: 1,
     name: "Утепленные штаны с молниями по всей длине",
-    price: "$99.99",
+    price: "9999Р",
       image: "data/item (13).png",
       image2: "data/item1 (13).png",
       texture: "data/texture item (13).jpg",
@@ -767,7 +767,7 @@ function initProductItems() {
   {
     id: 2,
     name: "Термобелье с бесшовной конструкцией",
-    price: "$44.99",
+    price: "4499Р",
       image: "data/item (14).png",
       image2: "data/item1 (14).png",
       texture: "data/texture item (14).jpg",
@@ -785,7 +785,7 @@ function initProductItems() {
   {
     id: 3,
     name: "Брюки с подогревом для колясочников",
-    price: "$199.99",
+    price: "19999Р",
       image: "data/item (15).png",
       image2: "data/item1 (15).png",
       texture: "data/texture item (15).jpg",
@@ -803,7 +803,7 @@ function initProductItems() {
   {
     id: 4,
     name: "Зимние лосины с усиленными коленями",
-    price: "$79.99",
+    price: "7999Р",
       image: "data/item (16).png",
       image2: "data/item1 (16).png",
       texture: "data/texture item (16).jpg",
