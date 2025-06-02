@@ -1553,15 +1553,17 @@ function initSmoothScrolling() {
   });
 }
 
-window.addEventListener("load", () => {
-    setTimeout(() => {
+if (!sessionStorage.getItem('animationPlayed')) {
+  document.querySelector(".loader").style.opacity = "1";
+  setTimeout(() => {
     document.querySelector(".loader").style.opacity = "0";
-        setTimeout(() => {
-            document.querySelector(".loader").remove();
-        }, 500);
-    }, 3200);
-});
-
+    setTimeout(() => {
+        document.querySelector(".loader").remove();
+    }, 500);
+  }, 3500);
+  sessionStorage.setItem('animationPlayed', 'true');
+}
+else document.querySelector(".loader").remove();
 function getSelectedFeatures() {
   const features = [];
   document.querySelectorAll('.checkbox-input:checked').forEach(checkbox => {
