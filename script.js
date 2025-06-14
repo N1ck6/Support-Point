@@ -1572,3 +1572,126 @@ function getSelectedFeatures() {
   });
   return features;
 }
+const questions = [
+{
+  question: "Какой длины должна быть нитка, чтобы вровень хватило для нашей теплой кофты?",
+  answers: ["1 мм", "1 см", "3 м", "13 км"],
+  correct: "3 м"
+},
+{
+  question: "Что произойдет с одеждой с сенсорными кнопками, если её случайно положить в микроволновку?",
+  answers: ["Взрывается", "Пишет диссертацию", "Становится умнее", "Звонит в поддержку"],
+  correct: "Звонит в поддержку"
+},
+{
+  question: "Сколько датчиков нужно добавить в шапку, чтобы она начала предсказывать погоду?",
+  answers: ["0", "10", "100", "Достаточно одного, но с кофеином"],
+  correct: "Достаточно одного, но с кофеином"
+},
+{
+  question: "Что произойдет с одеждой с подсветкой, если её забыть выключить?",
+  answers: ["Светится", "Горит", "Превратится обратно в нитки", "Будет заряжать розетку"],
+  correct: "Светится"
+},
+{
+  question: "Какой материал идеален для одежды с тактильными подсказками?",
+  answers: ["Швабра", "Рельса", "Магнитный шелкопряд", "Песок"],
+  correct: "Магнитный шелкопряд"
+},
+{
+  question: "Сколько раз можно растянуть адаптивные брюки, прежде чем они станут шароварами?",
+  answers: ["1", "10", "200", "Пока не жалуются"],
+  correct: "10"
+}
+];
+
+let currentQuestionIndex = 0;
+let quizStarted = false;
+
+function openQuiz() {
+  document.getElementById('quizPopup').style.display = 'flex';
+  document.getElementById('finalAnimation').style.display = 'none';
+  document.getElementById('openBtn').style.display = 'none';
+  document.getElementById('closeBtn').style.display = 'block';
+  resetQuiz();
+  showQuestion();
+}
+
+  function closeQuiz() {
+  document.getElementById('quizPopup').style.display = 'none';
+  document.getElementById('finalAnimation').style.display = 'none';
+  document.getElementById('closeBtn').style.display = 'none';
+  document.getElementById('openBtn').style.display = 'block';
+  resetQuiz();
+}
+
+function resetQuiz() {
+currentQuestionIndex = 0;
+quizStarted = false;
+document.getElementById('answersContainer').innerHTML = '';
+document.querySelectorAll('.answer-btn').forEach(btn => btn.remove());
+}
+
+function showQuestion() {
+if (currentQuestionIndex >= questions.length) {
+  showFinalAnimation();
+  return;
+}
+
+const q = questions[currentQuestionIndex];
+document.getElementById('questionText').innerText = q.question;
+
+const answersContainer = document.getElementById('answersContainer');
+answersContainer.innerHTML = '';
+
+const shuffled = [...q.answers].sort(() => Math.random() - 0.5);
+
+shuffled.forEach(answer => {
+  const btn = document.createElement('button');
+  btn.className = 'answer-btn';
+  btn.innerText = answer;
+  btn.onclick = () => handleAnswer(btn, answer === q.correct);
+  answersContainer.appendChild(btn);
+});
+}
+
+function handleAnswer(button, isCorrect) {
+const buttons = document.querySelectorAll('.answer-btn');
+buttons.forEach(btn => btn.classList.add('locked'));
+if (isCorrect) {
+  button.classList.add('correct');
+  setTimeout(() => {
+    currentQuestionIndex++;
+    buttons.forEach(btn => btn.classList.remove('correct', 'incorrect', 'locked'));
+    showQuestion();
+  }, 1000);
+} else {
+  button.classList.add('incorrect');
+  setTimeout(() => {
+    buttons.forEach(btn => btn.classList.remove('incorrect', 'locked'));
+  }, 500);
+}
+}
+
+function showFinalAnimation() {
+document.getElementById('quizPopup').style.display = 'none';
+document.getElementById('finalAnimation').style.display = 'block';
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('finalCanvas'), alpha: true });
+renderer.setSize(window.innerWidth, window.innerHeight);
+camera.position.z = 2;
+const geometry = new THREE.BoxGeometry(0.7, 0.7, 0.7);
+const edges = new THREE.EdgesGeometry(geometry);
+const material = new THREE.LineBasicMaterial({ color: 0x4ade80 });
+const cube = new THREE.LineSegments(edges, material);
+scene.add(cube);
+function animate() {
+  requestAnimationFrame(animate);
+  cube.rotation.x += 0.008;
+  cube.rotation.y += 0.012;
+  cube.rotation.z += 0.005;
+  renderer.render(scene, camera);
+}
+animate();
+}
