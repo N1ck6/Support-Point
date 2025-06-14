@@ -80,7 +80,29 @@
       </nav>
     </div>
   </header>
-
+<button class="open-btn" id="openBtn" onclick="openQuiz()"><b>Quiz</b></button>
+<button class="close-btn" id="closeBtn" onclick="closeQuiz()" style="display: none;">×</button>
+  <div class="quiz-popup" id="quizPopup">
+    <div class="question" id="questionText"></div>
+    <div class="answers" id="answersContainer"></div>
+  </div>
+  <div class="final-animation" id="finalAnimation">
+    <div class="background-lines">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+    <canvas id="finalCanvas"></canvas>
+    <div class="center-text">
+      <div>Да у тебя 200 IQ!</div>
+      <div>Покажи это чтобы забрать приз</div>
+    </div>
+  </div>
   <section id="main" class="main-section slide-up animated">
     <div class="container">
       <div class="main-content">
@@ -237,7 +259,6 @@
       </div>
     </div>
   </footer>
-  
   <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/build/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/controls/OrbitControls.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/three@0.132.2/examples/js/loaders/GLTFLoader.js"></script>
