@@ -1323,14 +1323,16 @@ footer {
   color: var(--text-color);
   border: none;
   border-radius: 50%;
-  width: 80px;
-  height: 50px;
-  font-size: 1.5rem;
+  width: 60px;
+  height: 40px;
+  font-size: 1.1rem;
   cursor: pointer;
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 15px;
+  right: 15px;
   z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.2s;
 }
 
 .close-btn {
@@ -1338,13 +1340,13 @@ footer {
   color: var(--text-color);
   border: none;
   border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  font-size: 2.5rem;
+  width: 40px;
+  height: 40px;
+  font-size: 2.4rem;
   cursor: pointer;
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 15px;
+  right: 15px;
   z-index: 1001;
 }
 
@@ -1359,12 +1361,14 @@ footer {
   border-radius: 15px;
   display: none;
   flex-direction: column;
-  z-index: 9;
+  z-index: 1000;
+  max-width: 600px;
+  max-height: 500px;
 }
 
 .question {
   padding: 20px;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   text-align: center;
   border-bottom: 1px solid #333;
   color: #d1b3c4;
