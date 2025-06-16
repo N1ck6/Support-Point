@@ -1559,14 +1559,12 @@ if (!sessionStorage.getItem('animationPlayed')) {
     document.querySelector(".loader").style.opacity = "0";
     setTimeout(() => {
         document.querySelector(".loader").remove();
-        // document.getElementById('openBtn').style.opacity = "1";
     }, 500);
   }, 3500);
   sessionStorage.setItem('animationPlayed', 'true');
 }
 else {
   document.querySelector(".loader").remove();
-  // document.getElementById('openBtn').style.opacity = "1";
 }
 function getSelectedFeatures() {
   const features = [];
