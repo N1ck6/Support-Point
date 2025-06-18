@@ -470,7 +470,7 @@ function initProductItems() {
     {
       id: 1,
       name: "Кофта из органического хлопка",
-      price: "3499Р",
+      price: "3 150Р",
       image: "data/item (1).jpg",
       image2: "data/item1 (1).jpg",
       texture: "data/texture item (1).jpg",
@@ -488,7 +488,7 @@ function initProductItems() {
     {
       id: 2,
       name: "Лонгслив из бамбуковой ткани",
-      price: "4299Р",
+      price: "2 520Р",
       image: "data/item (2).jpg",
       image2: "data/item1 (2).jpg",
       texture: "data/texture item (2).jpg",
@@ -506,7 +506,7 @@ function initProductItems() {
     {
       id: 3,
       name: "Рубашка из льна",
-      price: "4999Р",
+      price: "4 050Р",
       image: "data/item (3).jpg",
       image2: "data/item1 (3).jpg",
       texture: "data/texture item (3).jpg",
@@ -524,7 +524,7 @@ function initProductItems() {
     {
       id: 4,
       name: "Блузка из модала",
-      price: "3999Р",
+      price: "2 700Р",
       image: "data/item (4).jpg",
       image2: "data/item1 (4).jpg",
       texture: "data/texture item (4).jpg",
@@ -542,7 +542,7 @@ function initProductItems() {
     {
       id: 5,
       name: "Повседневная рубашка из льна",
-      price: "4599Р",
+      price: "3 150Р",
       image: "data/item (5).jpg",
       image2: "data/item1 (5).jpg",
       texture: "data/texture item (5).jpg",
@@ -560,7 +560,7 @@ function initProductItems() {
     {
       id: 6,
       name: "Создайте свой собственный дизайн",
-      price: "5999Р",
+      price: "4 500Р",
       image: "data/custom_clothes.png",
       texture: "data/texture basic.jpg",
       model: "data/coat.gltf",
@@ -581,7 +581,7 @@ function initProductItems() {
     {
     id: 1,
     name: "Парка с магнитными застежками",
-    price: "12999Р",
+    price: "6 300Р",
       image: "data/item (6).png",
       image2: "data/item1 (6).png",
       texture: "data/texture item (6).jpg",
@@ -599,7 +599,7 @@ function initProductItems() {
   {
     id: 2,
     name: "Утепленная куртка с регулируемым капюшоном",
-    price: "14999Р",
+    price: "7 200Р",
       image: "data/item (7).png",
       image2: "data/item1 (7).png",
       texture: "data/texture item (7).jpg",
@@ -617,7 +617,7 @@ function initProductItems() {
   {
     id: 3,
     name: "Жилет с бесшовными боковыми швами",
-    price: "8999Р",
+    price: "3 600Р",
       image: "data/item (8).png",
       image2: "data/item1 (8).png",
       texture: "data/texture item (8).jpg",
@@ -635,7 +635,7 @@ function initProductItems() {
   {
     id: 6,
     name: "Создайте свой собственный дизайн",
-    price: "5999Р",
+    price: "4 500Р",
     image: "data/custom_clothes.png",
     texture: "data/texture basic.jpg",
     model: "data/coat.gltf",
@@ -656,7 +656,7 @@ function initProductItems() {
     {
     id: 1,
     name: "Шорты с боковыми молниями",
-    price: "4999Р",
+    price: "2 250Р",
       image: "data/item (9).png",
       image2: "data/item1 (9).png",
       texture: "data/texture item (9).jpg",
@@ -674,7 +674,7 @@ function initProductItems() {
   {
     id: 2,
     name: "Легкие брюки с эластичным поясом",
-    price: "5999Р",
+    price: "3 150Р",
       image: "data/item (10).png",
       image2: "data/item1 (10).png",
       texture: "data/texture item (10).jpg",
@@ -692,7 +692,7 @@ function initProductItems() {
   {
     id: 3,
     name: "Юбка с магнитными застежками",
-    price: "5499Р",
+    price: "2 700Р",
       image: "data/item (11).png",
       image2: "data/item1 (11).png",
       texture: "data/texture item (11).jpg",
@@ -710,7 +710,7 @@ function initProductItems() {
   {
     id: 4,
     name: "Капри с карманами для катетеров",
-    price: "6999Р",
+    price: "3 600Р",
       image: "data/item (12).png",
       image2: "data/item1 (12).png",
       texture: "data/texture item (12).jpg",
@@ -728,7 +728,7 @@ function initProductItems() {
   {
     id: 5,
     name: "Создайте свой собственный дизайн",
-    price: "5999Р",
+    price: "4 500Р",
     image: "data/custom_clothes.png",
     texture: "data/texture basic.jpg",
     model: "data/Pants.gltf",
@@ -749,7 +749,7 @@ function initProductItems() {
     {
     id: 1,
     name: "Утепленные штаны с молниями по всей длине",
-    price: "9999Р",
+    price: "5 850Р",
       image: "data/item (13).png",
       image2: "data/item1 (13).png",
       texture: "data/texture item (13).jpg",
@@ -767,7 +767,7 @@ function initProductItems() {
   {
     id: 2,
     name: "Термобелье с бесшовной конструкцией",
-    price: "4499Р",
+    price: "4 500Р",
       image: "data/item (14).png",
       image2: "data/item1 (14).png",
       texture: "data/texture item (14).jpg",
@@ -785,7 +785,7 @@ function initProductItems() {
   {
     id: 3,
     name: "Брюки с подогревом для колясочников",
-    price: "19999Р",
+    price: "8 100Р",
       image: "data/item (15).png",
       image2: "data/item1 (15).png",
       texture: "data/texture item (15).jpg",
@@ -803,7 +803,7 @@ function initProductItems() {
   {
     id: 4,
     name: "Зимние лосины с усиленными коленями",
-    price: "7999Р",
+    price: "4 050Р",
       image: "data/item (16).png",
       image2: "data/item1 (16).png",
       texture: "data/texture item (16).jpg",
@@ -821,7 +821,7 @@ function initProductItems() {
   {
     id: 5,
     name: "Создайте свой собственный дизайн",
-    price: "5999Р",
+    price: "4 500Р",
     image: "data/custom_clothes.png",
     texture: "data/texture basic.jpg",
     model: "data/Pants.gltf",
